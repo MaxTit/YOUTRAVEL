@@ -1,0 +1,7 @@
+#Wed Dec 28 14:12:23 EET 2016
+base.0=C\:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_51c5f821d8c7d82765475d04fdd1f31d7d87f93d
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_5b62188e4f4875c23c8b1e8a9aac9a7981741b73\\classes.dex
+base.1=C\:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_5b62188e4f4875c23c8b1e8a9aac9a7981741b73
+file.0=C\:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_51c5f821d8c7d82765475d04fdd1f31d7d87f93d\\classes.dex

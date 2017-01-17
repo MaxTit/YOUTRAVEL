@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity" >
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width= "wrap_content"
+        android:layout_height= "wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="150dp"
+            android:layout_height="10dp"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:visibility="gone" >
+        <TextView
+            android:id="@+id/logintitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Логин:"
+            android:textSize="@dimen/login_text_size" />
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="@dimen/loginedt_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logintitle" >
+            <requestFocus android:layout_width="wrap_content" />
+        </EditText>
+        <TextView
+            android:id="@+id/pastitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText1"
+            android:text="Пароль:"
+            android:textSize="@dimen/login_text_size" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="@dimen/loginedt_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pastitle"
+            android:inputType="textPassword" />
+        <Button
+            android:id="@+id/go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText2"
+            android:text="Войти" />
+        <Button
+            android:id="@+id/reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/go"
+            android:text="Регистрация" />
+        <Button
+            android:id="@+id/gog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/reg"
+            android:text="Войти как гость" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

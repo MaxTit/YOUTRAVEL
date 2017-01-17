@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="22"
+    density="tvdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1064791015305737"
+    token="-4181179775723217397"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="24350" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="2346" />
+    <task
+        name="verifier"
+        duration="1039" />
+
+    <artifact
+        location="C:\Android Studio Projects\YouTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="1044925946212134"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Android Studio Projects\YouTRAVEL\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="1064791015305737"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Android Studio Projects\YouTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

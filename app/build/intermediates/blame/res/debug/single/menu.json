@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\tour_content.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\menu\\tour_content.xml"
+    }
+]

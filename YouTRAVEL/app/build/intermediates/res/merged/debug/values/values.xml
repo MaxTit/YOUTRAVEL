@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_padding">10dp</dimen>
+    <dimen name="list_height">90dp</dimen>
+    <dimen name="list_padding">12dp</dimen>
+    <dimen name="list_text_size">25sp</dimen>
+    <dimen name="list_width">380dp</dimen>
+    <dimen name="login_text_size">18sp</dimen>
+    <dimen name="loginedt_width">250dp</dimen>
+    <string name="app_name">YouTRAVEL</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

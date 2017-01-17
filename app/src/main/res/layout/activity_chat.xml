@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:windowAnimationStyle = "@null"
+    android:layout_height="match_parent"
+    android:background="#edeff0"
+    tools:context=".ChatActivity">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" > /* HERE */
+        <LinearLayout android:id="@+id/content_rel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="top|center_horizontal"
+                android:background="?attr/colorPrimaryDark"
+                app:navigationIcon="@drawable/ic_launcher"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            <RelativeLayout
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/logintitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Логин:"
+                    android:textSize="@dimen/login_text_size" />
+
+                <EditText
+                    android:id="@+id/editlogin"
+                    android:layout_width="@dimen/loginedt_width"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logintitle" >
+                    <requestFocus android:layout_width="wrap_content" />
+                </EditText>
+                <TextView
+                    android:id="@+id/pastitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editlogin"
+                    android:text="Пароль:"
+                    android:textSize="@dimen/login_text_size" />
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="@dimen/loginedt_width"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pastitle"
+                    android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editText2"
+                    android:text="Войти" />
+                <Button
+                    android:id="@+id/reg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/btn_padding"
+                    android:layout_below="@+id/go"
+                    android:text="Регистрация" />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <ScrollView  android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/messages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+
+            </LinearLayout>
+            </ScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_horizontal">
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="@dimen/chatedt_width"
+                    android:layout_height="wrap_content">
+                    <requestFocus android:layout_width="wrap_content" />
+                </EditText>
+                <Button
+                    android:id="@+id/enter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/editText1"
+                    android:text="Отправить" />
+            </RelativeLayout>
+</LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/list_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#434a54"
+        android:choiceMode="singleChoice"
+        android:divider="#8c9197"
+        android:dividerHeight="1dp" />
+
+</android.support.v4.widget.DrawerLayout>

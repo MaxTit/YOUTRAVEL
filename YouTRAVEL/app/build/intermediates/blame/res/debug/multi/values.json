@@ -1,0 +1,160 @@
+[
+    {
+        "outputFile": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 42,
+                    "endOffset": 93
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 98,
+                    "endColumn": 42,
+                    "endOffset": 136
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 42,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 141,
+                    "endColumn": 43,
+                    "endOffset": 180
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 185,
+                    "endColumn": 45,
+                    "endOffset": 226
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 231,
+                    "endColumn": 42,
+                    "endOffset": 269
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 274,
+                    "endColumn": 46,
+                    "endOffset": 316
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 321,
+                    "endColumn": 46,
+                    "endOffset": 363
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 368,
+                    "endColumn": 46,
+                    "endOffset": 410
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 415,
+                    "endColumn": 52,
+                    "endOffset": 463
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 468,
+                    "endColumn": 60,
+                    "endOffset": 524
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 529,
+                    "endLine": 18,
+                    "endColumn": 12,
+                    "endOffset": 826
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 831,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 986
+                },
+                "from": {
+                    "file": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            }
+        ]
+    }
+]

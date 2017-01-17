@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\getcode_dialog.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\layout\\getcode_dialog.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reg_dialog.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\layout\\reg_dialog.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YouTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_start.xml",
+        "source": "C:\\Android Studio Projects\\YouTRAVEL\\app\\src\\main\\res\\layout\\activity_start.xml"
+    }
+]

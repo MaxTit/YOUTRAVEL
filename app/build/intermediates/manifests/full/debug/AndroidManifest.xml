@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youtravel"
+    android:versionCode="9"
+    android:versionName="1.007" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="orientation"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name="com.youtravel.StartActivityAlternative"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.youtravel.HomeActivity"
+            android:label="@string/title_activity_home" />
+        <activity android:name="com.youtravel.CatalogueActivity" />
+        <activity android:name="com.youtravel.CountryActivity" />
+        <activity android:name="com.youtravel.ChatActivity" />
+        <activity android:name="com.youtravel.MenuChatActivity" />
+        <activity android:name="com.youtravel.TourFilteredActivity" />
+        <activity android:name="com.youtravel.JourneyKindActivity" />
+        <activity android:name="com.youtravel.TourContentActivity" />
+        <activity android:name="com.youtravel.ProfileActivity" />
+        <activity android:name="com.youtravel.Events" />
+        <activity android:name="com.youtravel.EventFiltersActivity" />
+        <activity android:name="com.youtravel.ExcursionsActivity" />
+        <activity android:name="com.youtravel.ExcursionFiltersActivity" />
+        <activity android:name="com.youtravel.ExcursionContentActivity" />
+        <activity android:name="com.youtravel.EventContentActivity" />
+        <activity android:name="com.youtravel.ServicesActivity" />
+        <activity android:name="com.youtravel.ServiceContentActivity" />
+        <activity android:name="com.youtravel.SettingsActivity" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

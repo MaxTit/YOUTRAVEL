@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="crystalrangeseekbar-1.0.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.crystal/crystalrangeseekbar/1.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.crystal/crystalrangeseekbar/1.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.crystal/crystalrangeseekbar/1.0.0/50d063eca680f55656d6a06fda7315d1eaf03b/crystalrangeseekbar-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
