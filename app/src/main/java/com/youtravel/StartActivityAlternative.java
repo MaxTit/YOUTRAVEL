@@ -1725,7 +1725,6 @@ public class StartActivityAlternative extends AppCompatActivity {
         //creating object for data
         ContentValues cv = new ContentValues();
         //connecting to DB
-
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String result = null;
         InputStream is = null;
@@ -1775,7 +1774,7 @@ public class StartActivityAlternative extends AppCompatActivity {
             fl = false;
             Log.e("log_tag", "Error converting result " + e.toString());
         }
-        if (fl == true) {
+        if (fl) {
             //paring data
             try {
                 if (!result.contains("null")) {
@@ -1789,8 +1788,226 @@ public class StartActivityAlternative extends AppCompatActivity {
                             json_data = jArray.getJSONObject(i);
                             if (json_data != null) {
 
-                                if (last_update != null)
+                                if (last_update != null) {
                                     db.delete("chat_mes", "id == ?", new String[]{json_data.getString("id")});
+                                    cv.put("isRead", -1);
+                                }
+                                else cv.put("isRead", 1);
+                                if (json_data.getString("id") != "null")
+                                    cv.put("id", json_data.getInt("id"));
+
+                                if (json_data.getString("id_chat") != "null")
+                                    cv.put("id_chat", json_data.getInt("id_chat"));
+
+                                if (json_data.getString("id_member") != "null")
+                                    cv.put("id_member", json_data.getInt("id_member"));
+
+                                if (json_data.getString("fio") != "null")
+                                    cv.put("author", json_data.getString("fio"));
+                                Log.d("idchat",json_data.getString("fio"));
+
+                                if (json_data.getString("message") != "null")
+                                    cv.put("message", json_data.getString("message"));
+
+                                if (json_data.getString("date_update") != "null")
+                                    cv.put("date_update", json_data.getString("date_update"));
+                                db.insert("chat_mes", null, cv);
+
+                            }
+
+                        }
+                    }
+                }
+            } catch (JSONException e1) {
+                Log.e("log_tag", "Error no ff " + e1.toString());
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+        db.close();
+        mProgressStatus += 10;
+    }
+
+    public static void update_chat(String id_user, Context context) {
+        //creating object for data
+        ContentValues cv = new ContentValues();
+        //connecting to DB
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String result = null;
+        InputStream is = null;
+        StringBuilder sb = null;
+        Boolean fl = true;
+        Cursor c;
+        String last_update = null;
+        String p_query = "SELECT date_update FROM chat ORDER BY date_update DESC LIMIT 1";
+        c = db.rawQuery(p_query, new String[]{});
+        if (c.moveToFirst() && c!=null && c.getCount()>0 ) {
+            last_update = c.getString(0);
+        }
+        // http post
+        try {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = null;
+            httppost = new HttpPost(server + "?signal=Chat");
+            List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+            nameValuePair.add(new BasicNameValuePair("id_user", id_user));
+            if (last_update != null) {
+                nameValuePair.add(new BasicNameValuePair("date", last_update));
+            }
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+            HttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
+            is = entity.getContent();
+        } catch (Exception e) {
+            fl = false;
+            Log.e("log_tag", "Error in http connection" + e.toString());
+        }
+
+        //convert response to string
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"), 8);
+            sb = new StringBuilder();
+            sb.append(reader.readLine() + "\n");
+            String line = "0";
+
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+
+            is.close();
+            result = sb.toString();
+
+        } catch (Exception e) {
+            fl = false;
+            Log.e("log_tag", "Error converting result " + e.toString());
+        }
+        if (fl == true) {
+            //paring data
+            try {
+                if (!result.contains("null")) {
+                    JSONArray jArray = new JSONArray(result);
+                    JSONObject json_data = null;
+                    Log.d("LOG_TAG", "Delete all from table " + "chat");
+                    if (last_update == null)
+                        db.delete("chat", null, null);
+                    if (jArray != null) {
+                        for (int i = 0; i < jArray.length(); i++) {
+                            json_data = jArray.getJSONObject(i);
+                            if (json_data != null) {
+
+                                if (last_update != null)
+                                    db.delete("chat", "id == ?", new String[]{json_data.getString("id")});
+
+                                if (json_data.getString("id") != "null")
+                                    cv.put("id", json_data.getInt("id"));
+
+                                if (json_data.getString("id_order") != "null")
+                                    cv.put("id_order", json_data.getInt("id_order"));
+
+                                if (json_data.getString("type") != "null")
+                                    cv.put("type", json_data.getString("type"));
+
+                                if (json_data.getString("id_source") != "null")
+                                    cv.put("id_source", json_data.getInt("id_source"));
+
+                                if (json_data.getString("fio") != "null")
+                                    cv.put("author", json_data.getString("fio"));
+
+                                if (json_data.getString("date_update") != "null")
+                                    cv.put("date_update", json_data.getString("date_update"));
+
+                                db.insert("chat", null, cv);
+                            }
+
+                        }
+                    }
+                }
+            } catch (JSONException e1) {
+                Log.e("log_tag", "Error no ff " + e1.toString());
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+        db.close();
+        mProgressStatus += 10;
+    }
+
+    public static void update_chat_mes(String id_user, Context context) {
+        //creating object for data
+        ContentValues cv = new ContentValues();
+        //connecting to DB
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String result = null;
+        InputStream is = null;
+        StringBuilder sb = null;
+        Boolean fl = true;
+        Cursor c;
+        String last_update = null;
+        Log.d("Start","0:0x002");
+        String p_query = "SELECT date_update FROM chat_mes ORDER BY date_update DESC LIMIT 1";
+        c = db.rawQuery(p_query, new String[]{});
+        if (c.moveToFirst() && c!=null && c.getCount()>0 ) {
+            last_update = c.getString(0);
+        }
+        // http post
+        try {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = null;
+            httppost = new HttpPost(server + "?signal=Chat_mes");
+            List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+            nameValuePair.add(new BasicNameValuePair("id_user", id_user));
+            if (last_update != null) {
+                nameValuePair.add(new BasicNameValuePair("date", last_update));
+            }
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+            HttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
+            is = entity.getContent();
+        } catch (Exception e) {
+            fl = false;
+            Log.e("log_tag", "Error in http connection" + e.toString());
+        }
+
+        //convert response to string
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"), 8);
+            sb = new StringBuilder();
+            sb.append(reader.readLine() + "\n");
+            String line = "0";
+
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+
+            is.close();
+            result = sb.toString();
+
+        } catch (Exception e) {
+            fl = false;
+            Log.e("log_tag", "Error converting result " + e.toString());
+        }
+        if (fl) {
+            //paring data
+            try {
+                if (!result.contains("null")) {
+                    JSONArray jArray = new JSONArray(result);
+                    JSONObject json_data = null;
+                    Log.d("LOG_TAG", "Delete all from table " + "chat_mes");
+                    if (last_update == null)
+                        db.delete("chat_mes", null, null);
+                    if (jArray != null) {
+                        for (int i = 0; i < jArray.length(); i++) {
+
+                            json_data = jArray.getJSONObject(i);
+
+                            if (json_data != null) {
+                                if (last_update != null) {
+                                    db.delete("chat_mes", "id == ?", new String[]{json_data.getString("id")});
+                                    cv.put("isRead", -1);
+                                }
+                                else cv.put("isRead", 1);
 
                                 if (json_data.getString("id") != "null")
                                     cv.put("id", json_data.getInt("id"));
@@ -1811,7 +2028,7 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
 
-                                    db.insert("chat_mes", null, cv);
+                                db.insert("chat_mes", null, cv);
 
                             }
 
@@ -1827,6 +2044,7 @@ public class StartActivityAlternative extends AppCompatActivity {
         db.close();
         mProgressStatus += 10;
     }
+
 
     public static void update_currency() {
         //creating object for data

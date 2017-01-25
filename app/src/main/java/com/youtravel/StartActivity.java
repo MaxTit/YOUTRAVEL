@@ -1801,6 +1801,7 @@ public class StartActivity extends AppCompatActivity {
         mProgressStatus += 10;
     }
 
+
     private static String make_date(String reference){
         DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
         Date date = null;

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="22"
-    density="tvdpi"
+    api-level="25"
+    density="420dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="1064791015305737"
-    token="-4181179775723217397"
+    timestamp="174925225452869"
+    token="6704050224548588404"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="24350" />
+        duration="44320" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2346" />
+        duration="619" />
     <task
         name="verifier"
-        duration="1039" />
+        duration="181" />
 
     <artifact
-        location="C:\Android Studio Projects\YouTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="1044925946212134"
+        timestamp="170247344670479"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Android Studio Projects\YouTRAVEL\app\build\outputs\apk\app-debug.apk"
+            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="1064791015305737"
+        timestamp="174925225452869"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Android Studio Projects\YouTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
             type="DEX" />
     </build>
 

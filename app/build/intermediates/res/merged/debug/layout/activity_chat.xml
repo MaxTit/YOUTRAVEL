@@ -76,6 +76,13 @@
                     android:layout_marginTop="@dimen/btn_padding"
                     android:layout_below="@+id/go"
                     android:text="Регистрация" />
+                <Button
+                    android:id="@+id/forg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/btn_padding"
+                    android:layout_below="@+id/reg"
+                    android:text="Забыли пароль?" />
             </RelativeLayout>
             <LinearLayout
                 android:id="@+id/chat"
@@ -99,7 +106,7 @@
             </ScrollView>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
                 <EditText
                     android:id="@+id/editText1"

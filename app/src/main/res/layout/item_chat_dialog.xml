@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:id="@+id/content"
-    android:layout_height="@dimen/list_height"
+    android:layout_height="110dp"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
-    android:paddingBottom="@dimen/list_padding"
+    android:paddingBottom="8dp"
     android:paddingTop="8dp" >
 
     <TextView

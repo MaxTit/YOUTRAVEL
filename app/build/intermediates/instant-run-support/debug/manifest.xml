@@ -15,6 +15,9 @@
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
@@ -53,6 +56,13 @@
         <activity android:name="com.youtravel.ServicesActivity" />
         <activity android:name="com.youtravel.ServiceContentActivity" />
         <activity android:name="com.youtravel.SettingsActivity" />
+
+        <service
+            android:name="com.youtravel.TestService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

@@ -70,7 +70,7 @@
             android:layout_height="30dp"
             android:background="@android:color/white"
             android:clickable="true"
-            android:text="Регистрация"
+            android:text="Подтвердить"
             android:textColor="#6a6e73"
             android:textStyle="bold" />
 

@@ -1,5 +1,8 @@
 package com.youtravel;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -7,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -27,6 +31,9 @@ import static com.youtravel.StartActivityAlternative.*;
 
 public class HomeActivity extends AppCompatActivity {
 
+	public static AlarmManager alarm;
+	static PendingIntent pintent;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +42,44 @@ public class HomeActivity extends AppCompatActivity {
 		notifyFresh();
 		init_interface();
 		show_last_tours();
+		pushrun(getApplicationContext());
+	}
+
+	public static void pushrun(final Context base)
+	{
+		//////////////////////////////////
+		final Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+
+		Intent intent = new Intent(base, TestService.class);
+		pintent = PendingIntent.getService(base, 0, intent, 0);
+		Handler handler = new Handler(Looper.getMainLooper());
+		handler.post(new Runnable() {
+			public void run() {
+
+				alarm = (AlarmManager) base.getSystemService(Context.ALARM_SERVICE);
+				//for 30 mint 60*60*1000
+				alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTime().getTime(),
+						1000*60, pintent);
+				base.startService(new Intent(base, TestService.class));
+			}
+		});
+		///////////////////////////////
+	}
+	public static void pushcansel()
+	{
+		//////////////////////////////////
+
+		Handler handler = new Handler(Looper.getMainLooper());
+		handler.post(new Runnable() {
+			public void run() {
+
+				alarm.cancel(pintent);
+			}
+		});
+		///////////////////////////////
 	}
 
 	public void notifyFresh() {
@@ -263,6 +308,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
 	}
+
+
 
 	public static Bundle getFreshTours() {
 		return freshTours;

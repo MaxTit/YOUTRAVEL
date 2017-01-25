@@ -64,7 +64,14 @@ public class MenuChatActivity extends AppCompatActivity {
         {
             login_v.setVisibility(View.VISIBLE);
             chat.setVisibility(View.GONE);
-            initLoginForm();
+            new LoginForm(this, new Callback() {
+                @Override
+                public void invoke() {
+                    login_v.setVisibility(View.GONE);
+                    chat.setVisibility(View.VISIBLE);
+                    refresh();
+                }
+            });
         }
         else {
             login_v.setVisibility(View.GONE);
@@ -104,6 +111,7 @@ public class MenuChatActivity extends AppCompatActivity {
             }
         }, 1000);
     }
+
     private  void refreshDialogs()
     {
         dbHelper = new DBHelper(this);
@@ -117,7 +125,7 @@ public class MenuChatActivity extends AppCompatActivity {
         } catch(NullPointerException ne) {}
 
         db = dbHelper.getWritableDatabase();
-        String p_query = "SELECT * FROM chat ORDER BY date_update";                                                   //TODO except not actual tours
+        String p_query = "SELECT * FROM chat ORDER BY date_update";             //TODO except not actual tours
         c = db.rawQuery(p_query,new String[]{});
         Log.d("chatPrint", c.getCount()+"");
         if (c.moveToFirst() && c!=null && c.getCount()>0 ) {
@@ -195,165 +203,5 @@ public class MenuChatActivity extends AppCompatActivity {
         }*/
         c.close();
         db.close();
-    }
-    private void initLoginForm() {
-
-        settings = getApplicationContext().getSharedPreferences("my_data", 0);
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
-        dbHelper = new DBHelper(this);
-        final RelativeLayout logincontent = (RelativeLayout) findViewById(R.id.login);
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        final boolean isConnected = activeNetwork != null &&
-                activeNetwork.isConnectedOrConnecting();
-        if (settings.getString("email_user", null) != null) {
-            StartActivity.hideKeyboard(this);
-
-            /// Пользователь уже авторизирон.
-        } else {
-            logincontent.setVisibility(View.VISIBLE);
-            final EditText login = (EditText) findViewById(R.id.editlogin);
-            final EditText pas = (EditText) findViewById(R.id.editText2);
-            if (isConnected) {
-                Button go = (Button) findViewById(R.id.go); // In
-                Button reg = (Button) findViewById(R.id.reg); // Registration
-                reg.setOnClickListener(new View.OnClickListener() {
-
-                    public void onClick(View arg0) {
-                        if (isConnected) {
-                            RegDialog rd = new RegDialog(MenuChatActivity.this);
-                            rd.show();
-                        } else {
-                            android.app.AlertDialog.Builder builder = new AlertDialog.Builder(MenuChatActivity.this);
-                            AlertDialog dialog = builder.create();
-                            dialog.setTitle("Для регистрация, подключитесь к Интернету");
-                            Message listenerDoesNotAccept = null;
-                            dialog.setButton("Ok", listenerDoesNotAccept);
-                            dialog.setCancelable(false);
-                            dialog.show();
-                        }
-
-                    }
-                });
-                go.setOnClickListener(new View.OnClickListener() {
-
-                    @SuppressLint("CommitPrefEdits")
-                    @SuppressWarnings("unused")
-                    public void onClick(View arg0) {
-                        if (isConnected) {
-
-                            String result = null;
-                            InputStream is = null;
-                            StringBuilder sb = null;
-                            Boolean fl = true;
-
-                            //http post
-                            try {
-                                HttpClient httpclient = new DefaultHttpClient();
-                                HttpPost httppost = null;
-                                httppost = new HttpPost(StartActivity.server + "/login.php?login=" + login.getText().toString() + "&pas=" + StartActivity.md5(pas.getText().toString()));
-                                //httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                                HttpResponse response = httpclient.execute(httppost);
-                                HttpEntity entity = response.getEntity();
-                                is = entity.getContent();
-                            } catch (Exception e) {
-                                fl = false;
-                                Log.e("log_tag", "Error in http connection" + e.toString());
-                            }
-
-                            //convert response to string
-                            try {
-                                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"), 8);
-                                sb = new StringBuilder();
-                                sb.append(reader.readLine() + "\n");
-                                String line = "0";
-
-                                while ((line = reader.readLine()) != null) {
-                                    sb.append(line + "\n");
-                                }
-
-                                is.close();
-                                result = sb.toString();
-
-                            } catch (Exception e) {
-                                fl = false;
-                                Log.e("log_tag", "Error converting result " + e.toString());
-                            }
-                            if (fl == true) {
-                                //paring data
-                                try {
-                                    JSONArray jArray = new JSONArray(result);
-                                    JSONObject json_data = null;
-                                    if (jArray != null) {
-                                        json_data = jArray.getJSONObject(0);
-                                        if (json_data != null) {
-                                            if (json_data.getString("email") != "null") {
-                                                SharedPreferences.Editor editor = settings.edit();
-                                                editor.putString("id_user", json_data.getString("id"));
-                                                editor.putString("email_user", json_data.getString("email"));
-                                                editor.putString("name_user", json_data.getString("fio"));
-                                                Log.d("PPPPPPPPPPPPPPP",json_data.getString("fio"));
-                                                editor.putString("phone_user", json_data.getString("phone"));
-                                                editor.apply();
-                                                StartActivity.logind = json_data.getString("id");
-                                            }
-                                            StartActivity.hideKeyboard(MenuChatActivity.this);
-                                            logincontent.setVisibility(View.GONE);
-                                            login_v.setVisibility(View.GONE);
-                                            chat.setVisibility(View.VISIBLE);
-                                            refresh();
-                                        }
-
-                                    } else {
-                                        android.app.AlertDialog.Builder builder = new AlertDialog.Builder(MenuChatActivity.this);
-                                        AlertDialog dialog = builder.create();
-                                        dialog.setTitle("Не верные данные");
-                                        Message listenerDoesNotAccept = null;
-                                        dialog.setButton("Ok", listenerDoesNotAccept);
-                                        dialog.setCancelable(false);
-                                        dialog.show();
-                                    }
-                                } catch (JSONException e1) {
-                                    Log.e("log_tag", "Error no ff " + e1.toString());
-                                    android.app.AlertDialog.Builder builder = new AlertDialog.Builder(MenuChatActivity.this);
-                                    AlertDialog dialog = builder.create();
-                                    dialog.setTitle("Не верные данные");
-                                    Message listenerDoesNotAccept = null;
-                                    dialog.setButton("Ok", listenerDoesNotAccept);
-                                    dialog.setCancelable(false);
-                                    dialog.show();
-                                } catch (Exception e1) {
-                                    e1.printStackTrace();
-                                }
-                            }
-                        } else {
-                            android.app.AlertDialog.Builder builder = new AlertDialog.Builder(MenuChatActivity.this);
-                            AlertDialog dialog = builder.create();
-                            dialog.setTitle("Для входа, подключитесь к Интернету");
-                            Message listenerDoesNotAccept = null;
-                            dialog.setButton("Ok", listenerDoesNotAccept);
-                            dialog.setCancelable(false);
-                            dialog.show();
-                        }
-
-                    }
-                });
-            } else {
-                android.app.AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                AlertDialog dialog = builder.create();
-                dialog.setTitle("Для входа, подключитесь к Интернету");
-                Message listenerDoesNotAccept = null;
-                dialog.setButton("Ok", listenerDoesNotAccept);
-                dialog.setCancelable(false);
-                dialog.show();
-            }
-        }
-
-
     }
 }

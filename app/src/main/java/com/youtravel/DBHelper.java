@@ -9,7 +9,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
       // ����������� �����������
-      super(context.getApplicationContext(), "myDB", null, 16); // !! increase last argument value to perform update of data base on devices !!
+      super(context.getApplicationContext(), "myDB", null, 19); // !! increase last argument value to perform update of data base on devices !!
     }
     @Override
     public void onOpen(SQLiteDatabase database) {
@@ -211,7 +211,8 @@ public class DBHelper extends SQLiteOpenHelper {
 					+ "id_member integer,"
 					+ "author text,"
 					+ "message text,"
-					+ "date_update DATETIME" +");");
+					+ "date_update DATETIME,"
+					+ "isRead integer" + ");");
 
 
     		Log.d("Endcreate", "end");
