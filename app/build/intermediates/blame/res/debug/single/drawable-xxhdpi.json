@@ -64,6 +64,14 @@
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xxhdpi/common_plus_signin_btn_text_light_normal.9.png"
     },
     {
+        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_add.png",
+        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/drawable-xxhdpi/ic_add.png"
+    },
+    {
+        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_tick.png",
+        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/drawable-xxhdpi/ic_tick.png"
+    },
+    {
         "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/common_google_signin_btn_icon_light_focused.9.png",
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xxhdpi/common_google_signin_btn_icon_light_focused.9.png"
     },
@@ -128,12 +136,12 @@
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xxhdpi/common_plus_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_mail.png",
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/drawable-xxhdpi/ic_mail.png"
+    },
+    {
+        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",
+        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_like.png",

@@ -6,5 +6,9 @@
     {
         "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/menu/main.xml",
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/menu/menu_chat.xml",
+        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/menu/menu_chat.xml"
     }
 ]

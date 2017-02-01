@@ -2,6 +2,8 @@ package com.youtravel;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
@@ -68,11 +71,12 @@ public class ChatActivity extends AppCompatActivity {
     public static String idChat = null;
     public static String typeChat = "-1";
     public static String idSource = "-1";
+    public static boolean newMessage = false;
+    static boolean paused = true;
     static DBHelper dbHelper;
     static SharedPreferences settings;
     static RelativeLayout login_v;
     static LinearLayout chat;
-
     static ScrollView scrollView;
     static Button enter;
     static EditText mess;
@@ -81,7 +85,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_chat);
-        new MainMenu(this);
+        newMessage = false;
         mess = (EditText) findViewById(R.id.editText1);
         login_v = (RelativeLayout) findViewById(R.id.login);
         chat = (LinearLayout) findViewById(R.id.chat);
@@ -107,6 +111,35 @@ public class ChatActivity extends AppCompatActivity {
         else {
            init();
          }
+        new MainMenu(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        paused = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        paused = false;
+        tim();
+    }
+
+    private void tim(){
+        if (!paused)
+            new CountDownTimer(10000, 10000) {
+                public void onTick(long millisUntilFinished) {
+                }
+                public void onFinish() {
+                    if(newMessage) {
+                        refresh();
+                        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+                    }
+                    tim();
+                }
+            }.start();
     }
 
     private  void init()
@@ -126,8 +159,12 @@ public class ChatActivity extends AppCompatActivity {
             c.close();
             db.close();
         }
-        refreshMes();
-
+        else {
+            ContentValues cv = new ContentValues();
+            cv.put("isRead", "1");
+            (new DBHelper(this)).getWritableDatabase().update("chat_mes", cv, "id_chat == ? AND isRead == -1", new String[]{idChat});
+        }
+            refreshMes();
         enter.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -219,6 +256,9 @@ public class ChatActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override public void run() {
                 // stop refresh
+                ContentValues cv = new ContentValues();
+                cv.put("isRead", "1");
+                (new DBHelper(ChatActivity.this)).getWritableDatabase().update("chat_mes", cv, "id_chat == ? AND isRead == -1", new String[]{idChat});
                 refreshMes();
             }
         }, 1000);

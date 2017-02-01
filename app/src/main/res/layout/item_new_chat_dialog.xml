@@ -8,17 +8,24 @@
     android:paddingBottom="8dp"
     android:paddingTop="8dp" >
 
-    <TextView
+    <EditText
         android:id="@+id/text1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
+        android:gravity="left"
         android:padding="@dimen/list_padding"
         android:minHeight="?android:attr/listPreferredItemHeight"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/black"
+        android:layout_weight="4"
         android:textSize="@dimen/list_text_size"
         android:textStyle="bold"
         />
-
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_tick"
+        android:id="@+id/tick"
+        android:layout_marginRight="2dp"/>
 </LinearLayout>

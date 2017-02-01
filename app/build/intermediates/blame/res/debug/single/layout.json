@@ -56,6 +56,10 @@
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout/activity_services.xml"
     },
     {
+        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout/item_new_chat_dialog.xml",
+        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout/item_new_chat_dialog.xml"
+    },
+    {
         "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout/activity_service_content.xml",
         "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout/activity_service_content.xml"
     },

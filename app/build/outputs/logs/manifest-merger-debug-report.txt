@@ -10,7 +10,7 @@ ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/sr
 		INJECTED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml
 	android:versionCode
-		ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:4:5-28
+		ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:4:5-29
 		INJECTED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml
 	xmlns:android
@@ -176,7 +176,7 @@ activity#com.youtravel.SettingsActivity
 ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:55:9-54
 	android:name
 		ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:55:19-51
-service#com.youtravel.TestService
+service#com.youtravel.PushService
 ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:56:9-60:19
 	android:enabled
 		ADDED from /Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/AndroidManifest.xml:58:13-35

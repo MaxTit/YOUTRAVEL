@@ -3,6 +3,8 @@ package com.youtravel;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -56,13 +58,19 @@ public class MainMenu {
                 mDrawerLayout.openDrawer(Gravity.LEFT);
             }});
         ArrayList<String> listpr = new ArrayList<>();
+        int quantity = (new DBHelper(context))
+                .getWritableDatabase()
+                .rawQuery("SELECT * FROM chat_mes WHERE isRead == -1", null)
+                .getCount();
+
+
         listpr.add("Каталог туров");
         listpr.add("Страны");
         listpr.add("Виды отдыха");
         listpr.add("Мероприятия");
         listpr.add("Экскурсии");
         listpr.add("Услуги");
-        listpr.add("Чат");
+        listpr.add("Чат     " + (quantity == 0 ? "" : "(" + String.valueOf(quantity) + ")" ));
         listpr.add("Мой кабинет");
         listpr.add("Настройки");
         mDrawerList.setAdapter(new ArrayAdapter<>(context, R.layout.list_item,R.id.text1, listpr));

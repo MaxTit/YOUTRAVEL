@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.youtravel"
-    android:versionCode="9"
-    android:versionName="1.007">
+    android:versionCode="10"
+    android:versionName="1.008">
 
     <uses-sdk
         android:minSdkVersion="20"
@@ -54,7 +54,7 @@
         <activity android:name=".ServiceContentActivity" />
         <activity android:name=".SettingsActivity" />
         <service
-            android:name=".TestService"
+            android:name=".PushService"
             android:enabled="true"
             android:exported="true" >
         </service>

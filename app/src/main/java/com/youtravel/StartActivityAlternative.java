@@ -1793,6 +1793,7 @@ public class StartActivityAlternative extends AppCompatActivity {
                                     cv.put("isRead", -1);
                                 }
                                 else cv.put("isRead", 1);
+                                cv.put("isPushed", -1);
                                 if (json_data.getString("id") != "null")
                                     cv.put("id", json_data.getInt("id"));
 
@@ -1908,6 +1909,9 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("type") != "null")
                                     cv.put("type", json_data.getString("type"));
 
+                                if (json_data.getString("subject") != "null")
+                                    cv.put("subject", json_data.getString("type"));
+
                                 if (json_data.getString("id_source") != "null")
                                     cv.put("id_source", json_data.getInt("id_source"));
 
@@ -2003,11 +2007,16 @@ public class StartActivityAlternative extends AppCompatActivity {
                             json_data = jArray.getJSONObject(i);
 
                             if (json_data != null) {
+
                                 if (last_update != null) {
                                     db.delete("chat_mes", "id == ?", new String[]{json_data.getString("id")});
                                     cv.put("isRead", -1);
+                                    cv.put("isPushed", 1);
                                 }
-                                else cv.put("isRead", 1);
+                                else {
+                                    cv.put("isRead", 1);
+                                    cv.put("isPushed", 1);
+                                }
 
                                 if (json_data.getString("id") != "null")
                                     cv.put("id", json_data.getInt("id"));
@@ -2248,21 +2257,6 @@ public class StartActivityAlternative extends AppCompatActivity {
             }
         }
         db.close();
-    }
-
-    private static String make_date(String reference){
-        DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
-        Date date = null;
-        boolean t = true;
-        try {
-            date = format.parse(reference);
-        }
-        catch (ParseException e){
-            Log.d("DATA_ERROR","Date parsing error!");
-            t = !t;
-        }
-        if (t) return format.format(date);
-        else return "Null";
     }
 
 }

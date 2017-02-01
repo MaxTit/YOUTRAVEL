@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="67a7c9f55b53134d9e46d3c66d1ef0566ee59a8c">
+        sha1="3109eaf1a0cb2a04744fe08b382708767a4fc449">
         <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5/classes.dex" />
     </item>
     <item
@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="57c15ed0feaa793f1c91e69ddf9c23237ad7a450">
+        sha1="b3b48de7bee7c26b678cf7fd0b546dff05a3b2ee">
         <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d/classes.dex" />
     </item>
     <item

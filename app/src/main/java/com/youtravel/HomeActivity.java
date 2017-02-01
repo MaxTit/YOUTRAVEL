@@ -23,7 +23,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -53,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MILLISECOND, 0);
 
-		Intent intent = new Intent(base, TestService.class);
+		Intent intent = new Intent(base, PushService.class);
 		pintent = PendingIntent.getService(base, 0, intent, 0);
 		Handler handler = new Handler(Looper.getMainLooper());
 		handler.post(new Runnable() {
@@ -63,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
 				//for 30 mint 60*60*1000
 				alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTime().getTime(),
 						1000*60, pintent);
-				base.startService(new Intent(base, TestService.class));
+				base.startService(new Intent(base, PushService.class));
 			}
 		});
 		///////////////////////////////
