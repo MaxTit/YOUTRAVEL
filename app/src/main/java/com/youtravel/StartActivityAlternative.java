@@ -1696,6 +1696,9 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("type") != "null")
                                     cv.put("type", json_data.getString("type"));
 
+                                if (json_data.getString("subject") != "null")
+                                    cv.put("subject", json_data.getString("subject"));
+
                                 if (json_data.getString("id_source") != "null")
                                     cv.put("id_source", json_data.getInt("id_source"));
 
@@ -1910,7 +1913,7 @@ public class StartActivityAlternative extends AppCompatActivity {
                                     cv.put("type", json_data.getString("type"));
 
                                 if (json_data.getString("subject") != "null")
-                                    cv.put("subject", json_data.getString("type"));
+                                    cv.put("subject", json_data.getString("subject"));
 
                                 if (json_data.getString("id_source") != "null")
                                     cv.put("id_source", json_data.getInt("id_source"));

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/menu/tour_content.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/menu/tour_content.xml"
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\tour_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\tour_content.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/menu/main.xml"
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/menu/menu_chat.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/menu/menu_chat.xml"
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_chat.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\menu_chat.xml"
     }
 ]

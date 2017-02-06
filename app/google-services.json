@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "14808310303",
+    "firebase_url": "https://youtravel-8a523.firebaseio.com",
+    "project_id": "youtravel-8a523",
+    "storage_bucket": "youtravel-8a523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14808310303:android:71fb08fa4be83843",
+        "android_client_info": {
+          "package_name": "com.youtravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14808310303-j033ic4u840ucnimqsdm81s4cfrevgkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCagi2Yhyx3pthwbCLRp6QNl9iC2hHBGPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

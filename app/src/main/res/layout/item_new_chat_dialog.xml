@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:id="@+id/content"
-    android:layout_height="110dp"
+    android:layout_height="115dp"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
     android:paddingBottom="8dp"
@@ -12,20 +12,30 @@
         android:id="@+id/text1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="left"
         android:padding="@dimen/list_padding"
         android:minHeight="?android:attr/listPreferredItemHeight"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/black"
-        android:layout_weight="4"
-        android:textSize="@dimen/list_text_size"
-        android:textStyle="bold"
-        />
-    <ImageView
         android:layout_weight="1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:textSize="@dimen/list_text_size"
+        android:textStyle="bold">
+    <requestFocus android:layout_width="wrap_content" />
+</EditText>
+    <LinearLayout
+        android:layout_weight="6"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="49dp"
         android:src="@drawable/ic_tick"
-        android:id="@+id/tick"
-        android:layout_marginRight="2dp"/>
+        android:id="@+id/tick"/>
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:src="@drawable/ic_cancel"
+        android:id="@+id/cancel"
+        android:layout_marginTop="2dp"/>
+    </LinearLayout>
 </LinearLayout>

@@ -1,7 +1,7 @@
-#Wed Feb 01 16:38:13 EET 2017
-base.0=/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d
+#Mon Feb 06 13:02:22 EET 2017
+base.0=C\:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_ee37634401b4fa7500c420a00eebf71e32549a82
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5/classes.dex
-base.1=/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5
-file.0=/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d/classes.dex
+file.1=C\:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_64940f94071d8f9bb0332c830cafe43d7186522b\\classes.dex
+base.1=C\:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_64940f94071d8f9bb0332c830cafe43d7186522b
+file.0=C\:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_ee37634401b4fa7500c420a00eebf71e32549a82\\classes.dex

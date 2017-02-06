@@ -2,112 +2,310 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_8173a3739ec6c739e827683b9dadc8a645799f62/classes.dex" />
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-auth-10.0.1_f7f9e57fdfa8c31e3ebae9c70f3f020512a01a5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-tasks-10.0.1_4e4ee169b5cd84f500232852a2179da8a7b23222.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_731f7f8e143027dbda0b064baec806ff4ed15984.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_5adccf9aabcf7fdfe9d707f602bffd22cbb5be04/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_f2401bb566720c001d79015a080f21b3cf4cd294/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_4e46c0d3a8cb3862d48fdc08cdce1fb3a5fcbf7f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_a5bf0ba7877d6c3f04b38fc113bb4b4317468b03/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_31b890043349ab13ccadbc86a7efa5d04559c8fe/classes.dex" />
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_731f7f8e143027dbda0b064baec806ff4ed15984\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.crystal/crystalrangeseekbar/1.0.0/jars/classes.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="a558f54ad003ffe728034d78a474709a77337cc2">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.crystal-crystalrangeseekbar-1.0.0_77641a397bb27d8fa03e6fe6af08881d4e36d807/classes.dex" />
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_4e4ee169b5cd84f500232852a2179da8a7b23222\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="3109eaf1a0cb2a04744fe08b382708767a4fc449">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5/classes.dex" />
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_9f5c87f6bec393796cf69a510edc0cabb2fd3c76\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_6bedf937c22af69a2e0784d3638688750fa378dc/classes.dex" />
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_f7f9e57fdfa8c31e3ebae9c70f3f020512a01a5e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="b3b48de7bee7c26b678cf7fd0b546dff05a3b2ee">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d/classes.dex" />
+        sha1="8c6926fde72537afd30945e7eae6d4ad057199f2">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_64940f94071d8f9bb0332c830cafe43d7186522b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\internal_impl-24.0.0_65cd1f55669aa136218ee7400225509ed1863e7e.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9482f44d5cf436932cd50652b17c5e58139e5ca9">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ee37634401b4fa7500c420a00eebf71e32549a82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_65cd1f55669aa136218ee7400225509ed1863e7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-basement-10.0.1_347c26168c13129c0fb74d0b905e8d7be67cfa42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-iid-10.0.1_9f5c87f6bec393796cf69a510edc0cabb2fd3c76.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_347c26168c13129c0fb74d0b905e8d7be67cfa42\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-24.0.0_56403e38fb90660dce6361d163d6aa33ac715b67.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_56403e38fb90660dce6361d163d6aa33ac715b67\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_c267cc202499ffaa12a037b6a84e11872a575db9\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_30deac12174a2026c6281fc4550b9c1bd7c2b833.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_8abf44500ef9dfaa48a0db82fe2878e518327d33.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_99f6f859254cee5ce04c4477805df1887e24c18e/classes.dex" />
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_30deac12174a2026c6281fc4550b9c1bd7c2b833\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_b6fb7f0cc9d0164846ce5b202df299802da249cf/classes.dex" />
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_61a9d905e2204b6d9592e9e5d39f03eef0eba4fc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_f485ca0f6bbcb982df6aa881f94ebcc8d899d17f\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-analytics-impl-10.0.1_61a9d905e2204b6d9592e9e5d39f03eef0eba4fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-common-10.0.1_f485ca0f6bbcb982df6aa881f94ebcc8d899d17f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_8abf44500ef9dfaa48a0db82fe2878e518327d33\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.crystal\crystalrangeseekbar\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a558f54ad003ffe728034d78a474709a77337cc2">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.crystal-crystalrangeseekbar-1.0.0_ee5132503615e86a5c878b3b15fdc2c451d761d6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.crystal\crystalrangeseekbar\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a558f54ad003ffe728034d78a474709a77337cc2">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.crystal-crystalrangeseekbar-1.0.0_ee5132503615e86a5c878b3b15fdc2c451d761d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\adt-bundle-windows-x86_64-20130219\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\support-annotations-24.0.0_5a50af7e9ff76581969c1b09e002623f95088960.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-base-10.0.1_c267cc202499ffaa12a037b6a84e11872a575db9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_f4fc68e8ec4e4689f4f97664351c9c9b564506c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-appindexing-10.0.1_f4fc68e8ec4e4689f4f97664351c9c9b564506c8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_4307fdb0796d0d15b3e60fe0d3c5c9c639d52d08\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-analytics-10.0.1_4307fdb0796d0d15b3e60fe0d3c5c9c639d52d08.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\adt-bundle-windows-x86_64-20130219\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_5a50af7e9ff76581969c1b09e002623f95088960\classes.dex" />
     </item>
 
 </items>

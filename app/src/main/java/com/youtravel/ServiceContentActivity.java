@@ -2,6 +2,7 @@ package com.youtravel;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +48,14 @@ public class ServiceContentActivity extends AppCompatActivity {
         });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
+        /// Analytics
+        Bundle params = new Bundle();
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("my_data", 0);
+        if (settings.getString("id_user", null) != null)
+            params.putInt("user_id", Integer.parseInt(settings.getString("id_user", "-1")));
+        params.putInt("source_id",service.id);
+        HomeActivity.mFirebaseAnalytics.logEvent("Service",params);
+        ////
     }
 
     private void output(String content){
