@@ -43,8 +43,6 @@ public class CountryActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         if(hasFocus && filled){
             refreshInterface(0);
-            //LinearLayout underframe = (LinearLayout) findViewById(R.id.content_rel);
-            //underframe.removeViewAt(0);
             filled = false;
         }
     }
