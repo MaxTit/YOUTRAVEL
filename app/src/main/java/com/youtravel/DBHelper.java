@@ -9,7 +9,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
       // ����������� �����������
-      super(context.getApplicationContext(), "myDB", null, 24); // !! increase last argument value to perform update of data base on devices !!
+      super(context.getApplicationContext(), "myDB", null, 26); // !! increase last argument value to perform update of data base on devices !!
     }
     @Override
     public void onOpen(SQLiteDatabase database) {
@@ -153,6 +153,7 @@ public class DBHelper extends SQLiteOpenHelper {
     	             + "longitude text,"
     	             + "date DATE,"
     	             + "id_comment text,"
+					 + "days text,"
 					 + "date_update DATETIME" + ");");
 
 			db.execSQL("create TABLE IF NOT EXISTS tours ("
@@ -175,6 +176,7 @@ public class DBHelper extends SQLiteOpenHelper {
     	             + "id_cities text,"
     	             + "start_point text,"
     	             + "id_comment text,"
+					 + "days text,"
 					 + "date_update DATETIME" + ");");
 
     		db.execSQL("create TABLE IF NOT EXISTS comments ("
@@ -215,6 +217,12 @@ public class DBHelper extends SQLiteOpenHelper {
 					+ "date_update DATETIME,"
 					+ "isRead integer,"
 					+ "isPushed integer" + ");");
+
+			db.execSQL("create TABLE IF NOT EXISTS images ("
+					+ "subject text,"
+					+ "id_subject integer,"
+					+ "url text,"
+					+ "is_downloaded integer" + ");");
 
 
     		Log.d("Endcreate", "end");

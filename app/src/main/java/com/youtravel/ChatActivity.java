@@ -3,32 +3,47 @@ package com.youtravel;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -66,10 +81,12 @@ import static com.youtravel.StartActivityAlternative.update_journey_kinds;
 import static com.youtravel.StartActivityAlternative.update_objects;
 import static com.youtravel.StartActivityAlternative.update_services;
 import static com.youtravel.StartActivityAlternative.update_tours;
+import android.Manifest;
 
 public class ChatActivity extends AppCompatActivity {
     public static String idChat = null;
     public static String typeChat = "-1";
+    public static String subjectChat = "-1";
     public static String idSource = "-1";
     public static boolean newMessage = false;
     static boolean paused = true;
@@ -80,10 +97,214 @@ public class ChatActivity extends AppCompatActivity {
     static ScrollView scrollView;
     static Button enter;
     static EditText mess;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+    private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_chat, menu);
+        menu.findItem(R.id.action_add).setIcon(R.drawable.ic_add);
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        if (requestCode == PERMISSIONS_REQUEST_READ_CONTACTS) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission is granted
+                // Check the SDK version and whether the permission is already granted or not.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
+                    //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
+                }
+                else {
+                    showContacts();
+                }
+            } else {
+                Toast.makeText(this, "Until you grant the permission, we canot display the names", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void showContacts()
+    {
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(
+                ChatActivity.this);
+        //builderSingle.setIcon(R.drawable.ic_launcher);
+        builderSingle.setTitle("Контакты");
+        final ArrayAdapter<String> names = new ArrayAdapter<String>(
+                ChatActivity.this,
+                android.R.layout.select_dialog_singlechoice);
+        final ArrayList<String> emails = new ArrayList<>();
+        final ArrayList<String> phones = new ArrayList<>();
+        ContentResolver cr = getContentResolver();
+        Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
+                null, null, null, null);
+
+        if (cur.getCount() > 0) {
+            while (cur.moveToNext()) {
+                String id = cur.getString(
+                        cur.getColumnIndex(ContactsContract.Contacts._ID));
+                String name = cur.getString(cur.getColumnIndex(
+                        ContactsContract.Contacts.DISPLAY_NAME));
+
+                Cursor pCur = cr.query(
+                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        null,
+                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
+                        new String[]{id}, null);
+                Cursor emailCur = cr.query(
+                        ContactsContract.CommonDataKinds.Email.CONTENT_URI,
+                        null,
+                        ContactsContract.CommonDataKinds.Email.CONTACT_ID
+                                + " = ?", new String[] { id }, null);
+                names.add(name);
+                if (pCur == null || pCur.getCount() == 0){
+                    phones.add("nophone");
+                }
+                else
+                    if (pCur.moveToNext()) {
+                        String phoneNo = pCur.getString(pCur.getColumnIndex(
+                                ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+
+
+                        if (phoneNo!=null )
+                        {
+                            phones.add(phoneNo);
+                        }
+                        else phones.add("nophone");
+                    }
+                if (emailCur == null || emailCur.getCount() == 0){
+                    emails.add("noemail");
+                }
+                else
+                    if (emailCur.moveToNext()) {
+                        // This would allow you get several email addresses
+                        // if the email addresses were stored in an array
+
+                        String email = emailCur
+                                .getString(emailCur
+                                        .getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
+                        if (email != null) {
+
+                            emails.add(email);
+                        } else emails.add("noemail");
+
+                    }
+                pCur.close();
+
+            }
+            /////////
+            builderSingle.setAdapter(names,
+                    new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //String strName = arrayAdapter.getItem(which);
+                            Log.d("contact","phone: "+phones.get(which)+" email: "+emails.get(which));
+                            ConnectivityManager cm =
+                                    (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                            final boolean isConnected = activeNetwork != null &&
+                                    activeNetwork.isConnectedOrConnecting();
+                            if (isConnected) {
+                                // TODO Auto-generated method stub
+                                try {
+                                    HttpClient httpclient = new DefaultHttpClient();
+                                    HttpPost httppost = new HttpPost(StartActivity.server + "/send_chat_mes.php");
+                                    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+                                    nameValuePairs.add(new BasicNameValuePair("email", emails.get(which)));
+                                    nameValuePairs.add(new BasicNameValuePair("phone",  phones.get(which).equals("nophone") ? "nophone" : reformat(phones.get(which)))); // TODO: Телефон с вида +7 915 387-32-72 к виду +7 (917) 625-6998 может бть nophone
+                                    nameValuePairs.add(new BasicNameValuePair("id_chat", idChat));
+                                    nameValuePairs.add(new BasicNameValuePair("id_member", settings.getString("id_user", null)));
+                                    nameValuePairs.add(new BasicNameValuePair("message", "Я добавил "+names.getItem(which)+" к диалогу."));
+                                    nameValuePairs.add(new BasicNameValuePair("type", typeChat));
+                                    nameValuePairs.add(new BasicNameValuePair("subject", subjectChat));
+                                    nameValuePairs.add(new BasicNameValuePair("id_source", idSource));
+                                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
+                                    // Execute HTTP Post Request
+                                    HttpResponse response = httpclient.execute(httppost);
+                                    String res = EntityUtils.toString(response.getEntity());
+                                    if(!res.equals("nouser")) {
+                                        if(!res.equals("useradd")) {
+                                            idChat = res;
+                                            Log.d("idchat", idChat);
+                                            StartActivity.hideKeyboard(ChatActivity.this);
+                                            refresh();
+                                        } else {
+                                            AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
+                                            AlertDialog dialog0 = builder.create();
+                                            dialog0.setTitle("Пользователь уже находится в этом диалоге");
+                                            dialog0.setButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                }
+                                            });
+                                            dialog0.setCancelable(false);
+                                            dialog0.show();
+                                        }
+                                    } else {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
+                                        AlertDialog dialog0 = builder.create();
+                                        dialog0.setTitle("Пользователь не зарегистрирован в системе");
+                                        dialog0.setButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                            }
+                                        });
+                                        dialog0.setCancelable(false);
+                                        dialog0.show();
+                                    }
+                                } catch (ClientProtocolException e) {
+                                    // TODO Auto-generated catch block
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch block
+                                }
+
+
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
+                                AlertDialog dialog0 = builder.create();
+                                dialog0.setTitle("Отсутствует подключение к Интернету");
+                                dialog0.setButton("Ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    }
+                                });
+                                dialog0.setCancelable(false);
+                                dialog0.show();
+                            }
+
+                        }
+                    });
+            builderSingle.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                public void onClick(final DialogInterface dialog, final int which) {
+
+                }});
+            builderSingle.setCancelable(true);
+            builderSingle.show();
+        }
+    }
+
+    private String reformat(String s) {
+        //String[] numbers = s.split("-");
+        return s;//numbers[0] + "-" + numbers[1] + numbers[2];
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_chat);
         newMessage = false;
         mess = (EditText) findViewById(R.id.editText1);
@@ -91,27 +312,45 @@ public class ChatActivity extends AppCompatActivity {
         chat = (LinearLayout) findViewById(R.id.chat);
         enter = (Button) findViewById(R.id.enter);
         scrollView = (ScrollView) findViewById(R.id.scroll_view);
-        if (android.os.Build.VERSION.SDK_INT > 9) {
+        if (Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
         settings = getApplicationContext().getSharedPreferences("my_data", 0);
-         if(settings.getString("id_user", null)==null)
-         {
-             login_v.setVisibility(View.VISIBLE);
-             chat.setVisibility(View.GONE);
-             new LoginForm(this, new Callback() {
-                 @Override
-                 public void invoke() {
-                     refresh();
-                     init();
-                 }
-             });
-         }
-        else {
-           init();
-         }
-        new MainMenu(this);
+        if (settings.getString("id_user", null) == null) {
+            login_v.setVisibility(View.VISIBLE);
+            chat.setVisibility(View.GONE);
+            new LoginForm(this, new Callback() {
+                @Override
+                public void invoke() {
+                    refresh();
+                    init();
+                }
+            });
+        } else {
+            init();
+        }
+        final MainMenu menu = new MainMenu(this, "Чат");
+        menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_add: {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                            requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
+                            //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
+                        }
+                        else
+                            showContacts();
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -127,13 +366,14 @@ public class ChatActivity extends AppCompatActivity {
         tim();
     }
 
-    private void tim(){
+    private void tim() {
         if (!paused)
             new CountDownTimer(10000, 10000) {
                 public void onTick(long millisUntilFinished) {
                 }
+
                 public void onFinish() {
-                    if(newMessage) {
+                    if (newMessage) {
                         refresh();
                         ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
                     }
@@ -142,11 +382,10 @@ public class ChatActivity extends AppCompatActivity {
             }.start();
     }
 
-    private  void init()
-    {
+    private void init() {
         login_v.setVisibility(View.GONE);
         chat.setVisibility(View.VISIBLE);
-        if (idChat.equals("-1")) {
+        if (idChat.equals("-1") && !typeChat.equals("-1")) {
             dbHelper = new DBHelper(this);
             SQLiteDatabase db;
             db = dbHelper.getWritableDatabase();
@@ -158,13 +397,12 @@ public class ChatActivity extends AppCompatActivity {
             }
             c.close();
             db.close();
-        }
-        else {
+        } else {
             ContentValues cv = new ContentValues();
             cv.put("isRead", "1");
             (new DBHelper(this)).getWritableDatabase().update("chat_mes", cv, "id_chat == ? AND isRead == -1", new String[]{idChat});
         }
-            refreshMes();
+        refreshMes();
         enter.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -185,6 +423,7 @@ public class ChatActivity extends AppCompatActivity {
                             nameValuePairs.add(new BasicNameValuePair("id_member", settings.getString("id_user", null)));
                             nameValuePairs.add(new BasicNameValuePair("message", mess.getText().toString()));
                             nameValuePairs.add(new BasicNameValuePair("type", typeChat));
+                            nameValuePairs.add(new BasicNameValuePair("subject", subjectChat));
                             nameValuePairs.add(new BasicNameValuePair("id_source", idSource));
                             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
 
@@ -211,7 +450,7 @@ public class ChatActivity extends AppCompatActivity {
                         dialog.show();
                     }
                 } else {
-                    android.app.AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
                     AlertDialog dialog = builder.create();
                     dialog.setTitle("Отсутствует подключение к Интернету");
                     dialog.setButton("Ok", new DialogInterface.OnClickListener() {
@@ -228,8 +467,8 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
-    private void refresh()
-    {
+
+    private void refresh() {
         AsyncTask<String, String, String> refresh = new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... params) {
@@ -254,7 +493,8 @@ public class ChatActivity extends AppCompatActivity {
         }
 
         new Handler().postDelayed(new Runnable() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 // stop refresh
                 ContentValues cv = new ContentValues();
                 cv.put("isRead", "1");
@@ -263,8 +503,8 @@ public class ChatActivity extends AppCompatActivity {
             }
         }, 1000);
     }
-    private  void refreshMes()
-    {
+
+    private void refreshMes() {
         dbHelper = new DBHelper(this);
 
         LinearLayout underframe = (LinearLayout) findViewById(R.id.messages);
@@ -273,35 +513,33 @@ public class ChatActivity extends AppCompatActivity {
 
         try {
             underframe.removeAllViewsInLayout();
-        } catch(NullPointerException ne) {}
+        } catch (NullPointerException ne) {
+        }
 
         db = dbHelper.getWritableDatabase();
         String p_query = "SELECT * FROM chat_mes WHERE id_chat = ? ORDER BY date_update";                                                   //TODO except not actual tours
-        c = db.rawQuery(p_query,new String[]{idChat});
-        Log.d("chatPrint", c.getCount()+"");
-        if (c.moveToFirst() && c!=null && c.getCount()>0 ) {
+        c = db.rawQuery(p_query, new String[]{idChat});
+        Log.d("chatPrint", c.getCount() + "");
+        if (c.moveToFirst() && c != null && c.getCount() > 0) {
             c.moveToFirst();
             while (!c.isAfterLast()) {
                 View v = null;
                 v = getLayoutInflater().inflate(R.layout.item_mes_chat, underframe, false);
                 underframe.addView(v);
-                Log.d("member",settings.getString("id_user", null)+" "+c.getString(2)+" "+c.getString(3));
-                if(settings.getString("id_user", null).equals(c.getString(2)))
-                {
-                    final RelativeLayout content = (RelativeLayout)v.findViewById(R.id.content_left);
+                Log.d("member", settings.getString("id_user", null) + " " + c.getString(2) + " " + c.getString(3));
+                if (settings.getString("id_user", null).equals(c.getString(2))) {
+                    final RelativeLayout content = (RelativeLayout) v.findViewById(R.id.content_left);
                     content.setVisibility(View.VISIBLE);
-                    final TextView from = (TextView)v.findViewById(R.id.from_left);
+                    final TextView from = (TextView) v.findViewById(R.id.from_left);
                     from.setText("Я:");
-                    final TextView mes = (TextView)v.findViewById(R.id.message_left);
+                    final TextView mes = (TextView) v.findViewById(R.id.message_left);
                     mes.setText(c.getString(4));
-                }
-                else
-                {
-                    final RelativeLayout content = (RelativeLayout)v.findViewById(R.id.content_right);
+                } else {
+                    final RelativeLayout content = (RelativeLayout) v.findViewById(R.id.content_right);
                     content.setVisibility(View.VISIBLE);
-                    final TextView from = (TextView)v.findViewById(R.id.from_right);
+                    final TextView from = (TextView) v.findViewById(R.id.from_right);
                     from.setText(c.getString(3));
-                    final TextView mes = (TextView)v.findViewById(R.id.message_right);
+                    final TextView mes = (TextView) v.findViewById(R.id.message_right);
                     mes.setText(c.getString(4));
                 }
 
@@ -313,7 +551,7 @@ public class ChatActivity extends AppCompatActivity {
                     View view = (View) scrollView.getChildAt(scrollView.getChildCount() - 1);
                     scrollView.scrollTo(0, view.getBottom());
 
-                    Log.i("FILL","FILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+                    Log.i("FILL", "FILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
                 }
             }, 100);
         }
@@ -330,5 +568,41 @@ public class ChatActivity extends AppCompatActivity {
         }*/
         c.close();
         db.close();
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("Chat Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 }

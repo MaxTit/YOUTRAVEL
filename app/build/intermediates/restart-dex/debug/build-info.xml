@@ -1,118 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="25"
-    density="420dpi"
+    api-level="19"
+    density="tvdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="222358871561236"
+    timestamp="34404498501239"
     token="6704050224548588404"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="5952" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="207" />
+        duration="0" />
     <task
         name="verifier"
-        duration="13" />
+        duration="0" />
 
     <artifact
-        location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
-        type="DEX" />
+        location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="218429116770049"
+        timestamp="34404498501239"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="221014841046363"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="222164251540184"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_31b890043349ab13ccadbc86a7efa5d04559c8fe/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_f2401bb566720c001d79015a080f21b3cf4cd294/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_a5bf0ba7877d6c3f04b38fc113bb4b4317468b03/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_8173a3739ec6c739e827683b9dadc8a645799f62/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_4e46c0d3a8cb3862d48fdc08cdce1fb3a5fcbf7f/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_99f6f859254cee5ce04c4477805df1887e24c18e/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_5adccf9aabcf7fdfe9d707f602bffd22cbb5be04/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_6bedf937c22af69a2e0784d3638688750fa378dc/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.crystal-crystalrangeseekbar-1.0.0_77641a397bb27d8fa03e6fe6af08881d4e36d807/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_b6fb7f0cc9d0164846ce5b202df299802da249cf/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="222358871561236"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

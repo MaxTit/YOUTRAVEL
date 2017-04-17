@@ -204,7 +204,7 @@ public class ServicesActivity extends AppCompatActivity {
 
 
     private void init_interface() {
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Услуги");
         final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {

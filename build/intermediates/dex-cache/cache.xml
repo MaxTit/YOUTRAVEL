@@ -2,112 +2,328 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_8173a3739ec6c739e827683b9dadc8a645799f62/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_5adccf9aabcf7fdfe9d707f602bffd22cbb5be04/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_f2401bb566720c001d79015a080f21b3cf4cd294/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_4e46c0d3a8cb3862d48fdc08cdce1fb3a5fcbf7f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_a5bf0ba7877d6c3f04b38fc113bb4b4317468b03/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_31b890043349ab13ccadbc86a7efa5d04559c8fe/classes.dex" />
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_31b890043349ab13ccadbc86a7efa5d04559c8fe.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-10.0.1_5c369b22cac45569918e89a840c5ad1623cc72f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/internal_impl-24.0.0_5cf16c74af9609a0921bad095e956f3212db8234.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-auth-10.0.1_44709c3558667f57d5136e9fc9666da05d6c6b13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-10.0.1_2ae048c44b08781b483d02ccad9fd79af431f2e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_6f7e927473649465562ce350d7270bbcf6fe62fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_f2401bb566720c001d79015a080f21b3cf4cd294.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/uk.co.chrisjenx-calligraphy-2.2.0_438e3279eedc21cd370fb581b25f8496370d76b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_0f71be2762591a1dd0f36ea490e8d4f31f0551fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-10.0.1_44709c3558667f57d5136e9fc9666da05d6c6b13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3d5173393cdac1642203bc27b4f2acd93a2872fb">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.0.1_82e7d81e97d143ef611e8261eaaf4b178bbaedb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.0.1_9e71fa281b1039ef0b1e13b87660129c3fbde1fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.4.0_99f6f859254cee5ce04c4477805df1887e24c18e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-appindexing-10.0.1_20bc7ec5c61f8a5260dcd3e2a02fad5f2c5cacdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.crystal/crystalrangeseekbar/1.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="a558f54ad003ffe728034d78a474709a77337cc2">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.crystal-crystalrangeseekbar-1.0.0_77641a397bb27d8fa03e6fe6af08881d4e36d807/classes.dex" />
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.crystal-crystalrangeseekbar-1.0.0_77641a397bb27d8fa03e6fe6af08881d4e36d807.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.0.1_5c369b22cac45569918e89a840c5ad1623cc72f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-23.4.0_31b890043349ab13ccadbc86a7efa5d04559c8fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.0.1_b91d49ccbf86e81bb9e8e515bef74e29ce833812.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.0.1_fae886ce03fc10071ead3674dd51a2a1494c7fb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-23.4.0_f2401bb566720c001d79015a080f21b3cf4cd294.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_5cf16c74af9609a0921bad095e956f3212db8234.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.0.1_e3af69f1a90f706c75c8fd347bd2e00e113ec7d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.0.1_2ae048c44b08781b483d02ccad9fd79af431f2e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-10.0.1_9e71fa281b1039ef0b1e13b87660129c3fbde1fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.0.1_82e7d81e97d143ef611e8261eaaf4b178bbaedb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.crystal/crystalrangeseekbar/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a558f54ad003ffe728034d78a474709a77337cc2">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.crystal-crystalrangeseekbar-1.0.0_77641a397bb27d8fa03e6fe6af08881d4e36d807.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-24.0.0_0f71be2762591a1dd0f36ea490e8d4f31f0551fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/uk.co.chrisjenx-calligraphy-2.2.0_438e3279eedc21cd370fb581b25f8496370d76b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/support-annotations-24.0.0_6f7e927473649465562ce350d7270bbcf6fe62fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="3109eaf1a0cb2a04744fe08b382708767a4fc449">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5/classes.dex" />
+        sha1="1b41bf5e379cceb5665c4655292f834ac90052cd">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_76a676bf85628b6c5c7c375876b9dfffdee84be5.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_6bedf937c22af69a2e0784d3638688750fa378dc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b3b48de7bee7c26b678cf7fd0b546dff05a3b2ee">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8fae2a5ac27ab09f3c23354268740e109cecfa0d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_99f6f859254cee5ce04c4477805df1887e24c18e/classes.dex" />
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_99f6f859254cee5ce04c4477805df1887e24c18e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_b6fb7f0cc9d0164846ce5b202df299802da249cf/classes.dex" />
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-appindexing-10.0.1_20bc7ec5c61f8a5260dcd3e2a02fad5f2c5cacdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-iid-10.0.1_e3af69f1a90f706c75c8fd347bd2e00e113ec7d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-common-10.0.1_fae886ce03fc10071ead3674dd51a2a1494c7fb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-impl-10.0.1_b91d49ccbf86e81bb9e8e515bef74e29ce833812.jar" />
     </item>
 
 </items>

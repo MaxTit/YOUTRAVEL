@@ -2,6 +2,7 @@ package com.youtravel;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,14 @@ public class ExcursionContentActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+        /// Analytics
+        Bundle params = new Bundle();
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("my_data", 0);
+        if (settings.getString("id_user", null) != null)
+            params.putInt("user_id", Integer.parseInt(settings.getString("id_user", "-1")));
+        params.putInt("source_id",excursion.id);
+        HomeActivity.mFirebaseAnalytics.logEvent("Excursion",params);
+        ////
     }
 
     private void output(String content){
@@ -82,7 +91,7 @@ public class ExcursionContentActivity extends AppCompatActivity {
 
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Экскурсии");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

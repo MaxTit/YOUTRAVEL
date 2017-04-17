@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="MissingPrefix"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:windowAnimationStyle = "@null"
+    tools:context=".TourFilteredActivity" >
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout android:id="@+id/content_lin_gen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                android:background="@drawable/com_background"
+                app:navigationIcon="@drawable/ic_launcher"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_height="70dp"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:textAppearance="@style/Toolbar.TitleText"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:text="Каталог туров">
+                </TextView>
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.youtravel.ScrollViewExt android:id="@+id/scroll_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/c"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="vertical">
+                            <HorizontalScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:scrollbars="none">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Сортировать по: "
+                                        android:textAppearance="@style/TypicalText03"
+                                        android:textSize="25sp"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="40dp"
+                                        />
+                                    <TextView
+                                        android:id="@+id/sort_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="названию"
+                                        android:textAppearance="@style/TypicalText03"
+                                        android:textSize="25sp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="40dp"
+                                        />
+                                    <TextView
+                                        android:id="@+id/sort_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="цене"
+                                        android:textAppearance="@style/TypicalText03"
+                                        android:textSize="25sp"
+                                        android:paddingRight="40dp"
+                                        />
+                                    <TextView
+                                        android:id="@+id/sort_new"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="новизне"
+                                        android:textAppearance="@style/TypicalText03"
+                                        android:textSize="25sp"
+                                        android:paddingRight="40dp"
+                                        />
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/content_rel"
+                            android:weightSum="2"
+                            android:paddingBottom="20dp">
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.youtravel.ScrollViewExt>
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:id="@+id/content_rel2"/>
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/list_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/blue"
+        android:choiceMode="singleChoice"
+        android:divider="@color/white"
+        android:dividerHeight="1dp" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -42,7 +42,7 @@ public class ChangeDialog extends Dialog implements
 
     public ChangeDialog(Activity a, String id) {
         super(a);
-// TODO Auto-generated constructor stub
+    // TODO Auto-generated constructor stub
         this.id = id;
         this.c = a;
     }

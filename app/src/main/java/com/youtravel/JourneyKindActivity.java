@@ -137,7 +137,7 @@ public class JourneyKindActivity extends AppCompatActivity {
     }
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Виды отдыха");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

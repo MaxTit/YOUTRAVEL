@@ -122,14 +122,14 @@ tools:context=".SettingsActivity" >
 </FrameLayout>
 
 
-<ListView
-    android:id="@+id/left_drawer"
-    android:layout_width="@dimen/list_width"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:background="#434a54"
-    android:choiceMode="singleChoice"
-    android:divider="#8c9197"
-    android:dividerHeight="1dp" />
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/list_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/blue"
+        android:choiceMode="singleChoice"
+        android:divider="@color/white"
+        android:dividerHeight="1dp" />
 
 </android.support.v4.widget.DrawerLayout>

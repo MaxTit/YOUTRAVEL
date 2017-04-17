@@ -41,7 +41,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_profile);
-        new MainMenu(this);
+        new MainMenu(this, "Мой кабинет");
         final RelativeLayout logincontent = (RelativeLayout) findViewById(R.id.login);
         settings = getApplicationContext().getSharedPreferences("my_data", 0);
         if(settings.getString("id_user", null)==null)

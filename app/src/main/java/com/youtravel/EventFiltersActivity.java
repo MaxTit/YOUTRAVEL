@@ -50,7 +50,7 @@ public class EventFiltersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_event_filters);
-        new MainMenu(this);
+        new MainMenu(this, "Мероприятия");
         dbHelper = new DBHelper(this);
         spinner_country = (Spinner) findViewById(R.id.spinner);
         spinner_city = (Spinner) findViewById(R.id.spinner_city);

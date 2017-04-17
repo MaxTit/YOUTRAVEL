@@ -43,8 +43,6 @@ public class CountryActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         if(hasFocus && filled){
             refreshInterface(0);
-            //LinearLayout underframe = (LinearLayout) findViewById(R.id.content_rel);
-            //underframe.removeViewAt(0);
             filled = false;
         }
     }
@@ -132,7 +130,7 @@ public class CountryActivity extends AppCompatActivity {
     }
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Страны");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

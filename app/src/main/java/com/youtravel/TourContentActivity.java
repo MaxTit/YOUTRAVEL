@@ -2,6 +2,8 @@ package com.youtravel;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -17,12 +19,14 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import tools.Contact;
 
 public class TourContentActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,17 +34,27 @@ public class TourContentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tour_content);
         init_interface();
         final Tour tour = (Tour)getIntent().getSerializableExtra("tour");
-        final tools.Contact contact = new tools.Contact(this,"tour",tour.id+"");
+        final tools.Contact contact_call = new tools.Contact(this,"tour", tour.id+"");
         output(tour.html);
         (findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("lololo","lololol");
-                AlertDialog dialog = contact.callType(tour.name);
+                AlertDialog dialog = contact_call.callType(tour.name);
                 dialog.show();
             }
         });
+
+        /// Analytics
+        Bundle params = new Bundle();
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("my_data", 0);
+        if (settings.getString("id_user", null) != null)
+            params.putInt("user_id", Integer.parseInt(settings.getString("id_user", "-1")));
+        params.putInt("source_id",tour.id);
+        HomeActivity.mFirebaseAnalytics.logEvent("Tour",params);
+        ////
     }
+
 
     private void output(String content){
         WebView webview = (WebView) findViewById(R.id.webview);
@@ -86,7 +100,7 @@ public class TourContentActivity extends AppCompatActivity {
 
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Каталог туров");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -103,6 +117,7 @@ public class TourContentActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
 }

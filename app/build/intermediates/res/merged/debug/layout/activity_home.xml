@@ -17,47 +17,57 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <RelativeLayout android:id="@+id/content_rel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/my_toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:gravity="top|center_horizontal"
-                    android:background="?attr/colorPrimaryDark"
-
+                    android:gravity="center"
+                    app:titleTextAppearance="@style/Toolbar.TitleText"
+                    android:background="@drawable/com_background"
                     app:navigationIcon="@drawable/ic_launcher"
-
                     android:elevation="4dp"
                     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-            </RelativeLayout>
-            <TextView
-                android:textSize="30sp"
-                android:text="Новые туры: "
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal|top"
-                android:textAlignment="gravity"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold" />
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    android:layout_height="70dp"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="10dp">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:textAppearance="@style/Toolbar.TitleText"
+                        android:layout_gravity="top"
+                        android:gravity="center"
+                        android:text="Горячие туры">
+                    </TextView>
+                </android.support.v7.widget.Toolbar>
 
             <android.support.v4.widget.SwipeRefreshLayout
                 android:id="@+id/swipe_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout android:id="@+id/content_tours"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-            </LinearLayout>
-            </ScrollView>
+                    android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout android:id="@+id/content_tours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:elevation="4dp"
+                            android:paddingBottom="15dp"
+                            android:background="@color/white">
+                        </LinearLayout>
+                        <ImageView android:id="@+id/show_else" android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:paddingTop="40dp"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="40dp"
+                            android:src="@drawable/show_else">
+                        </ImageView>
+                    </LinearLayout>
+                </ScrollView>
             </android.support.v4.widget.SwipeRefreshLayout>
 
         </LinearLayout>
@@ -69,9 +79,9 @@
         android:layout_width="@dimen/list_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#434a54"
+        android:background="@color/blue"
         android:choiceMode="singleChoice"
-        android:divider="#8c9197"
+        android:divider="@color/white"
         android:dividerHeight="1dp" />
 
 </android.support.v4.widget.DrawerLayout>
