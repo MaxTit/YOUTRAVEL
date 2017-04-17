@@ -1,22 +1,42 @@
 [
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/catalogue_content.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout-sw600dp/catalogue_content.xml"
+        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content.xml",
+        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\catalogue_content.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/activity_tour_filtered.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout-sw600dp/activity_tour_filtered.xml"
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_tour_filtered.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_tour_filtered.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/activity_home.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout-sw600dp/activity_home.xml"
+        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_tour_filtered.xml",
+        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_tour_filtered.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/catalogue_content2.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout-sw600dp/catalogue_content2.xml"
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\pair.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\pair.xml"
     },
     {
-        "merged": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/pair.xml",
-        "source": "/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/src/main/res/layout-sw600dp/pair.xml"
+        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_home.xml",
+        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_home.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content2.xml",
+        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\catalogue_content2.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\catalogue_content.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content2.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\catalogue_content2.xml"
+    },
+    {
+        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\pair.xml",
+        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\pair.xml"
     }
 ]
