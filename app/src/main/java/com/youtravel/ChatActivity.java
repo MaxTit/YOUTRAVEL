@@ -121,7 +121,8 @@ public class ChatActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
                     //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
-                } else {
+                }
+                else {
                     showContacts();
                 }
             } else {
@@ -139,8 +140,8 @@ public class ChatActivity extends AppCompatActivity {
         final ArrayAdapter<String> names = new ArrayAdapter<String>(
                 ChatActivity.this,
                 android.R.layout.select_dialog_singlechoice);
-        final ArrayList<String> emails = new ArrayList<String>();
-        final ArrayList<String> phones = new ArrayList<String>();
+        final ArrayList<String> emails = new ArrayList<>();
+        final ArrayList<String> phones = new ArrayList<>();
         ContentResolver cr = getContentResolver();
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
                 null, null, null, null);
@@ -163,31 +164,39 @@ public class ChatActivity extends AppCompatActivity {
                         ContactsContract.CommonDataKinds.Email.CONTACT_ID
                                 + " = ?", new String[] { id }, null);
                 names.add(name);
-                if (pCur.moveToNext()) {
-                    String phoneNo = pCur.getString(pCur.getColumnIndex(
-                            ContactsContract.CommonDataKinds.Phone.NUMBER));
-
-
-
-                    if (phoneNo!=null )
-                    {
-                        phones.add(phoneNo);
-                    }
-                    else phones.add("nophone");
+                if (pCur == null || pCur.getCount() == 0){
+                    phones.add("nophone");
                 }
-                if (emailCur.moveToNext()) {
-                    // This would allow you get several email addresses
-                    // if the email addresses were stored in an array
-                    String email = emailCur
-                            .getString(emailCur
-                                    .getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
-                    if ( email!= null)
-                    {
-                        emails.add(email);
-                    }
-                    else emails.add("noemail");
+                else
+                    if (pCur.moveToNext()) {
+                        String phoneNo = pCur.getString(pCur.getColumnIndex(
+                                ContactsContract.CommonDataKinds.Phone.NUMBER));
 
+
+
+                        if (phoneNo!=null )
+                        {
+                            phones.add(phoneNo);
+                        }
+                        else phones.add("nophone");
+                    }
+                if (emailCur == null || emailCur.getCount() == 0){
+                    emails.add("noemail");
                 }
+                else
+                    if (emailCur.moveToNext()) {
+                        // This would allow you get several email addresses
+                        // if the email addresses were stored in an array
+
+                        String email = emailCur
+                                .getString(emailCur
+                                        .getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
+                        if (email != null) {
+
+                            emails.add(email);
+                        } else emails.add("noemail");
+
+                    }
                 pCur.close();
 
             }
@@ -211,7 +220,7 @@ public class ChatActivity extends AppCompatActivity {
                                     HttpPost httppost = new HttpPost(StartActivity.server + "/send_chat_mes.php");
                                     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
                                     nameValuePairs.add(new BasicNameValuePair("email", emails.get(which)));
-                                    nameValuePairs.add(new BasicNameValuePair("phone", phones.get(which))); // TODO: Телефон с вида +7 915 387-32-72 к виду +7 (917) 625-6998 может бть nophone
+                                    nameValuePairs.add(new BasicNameValuePair("phone",  phones.get(which).equals("nophone") ? "nophone" : reformat(phones.get(which)))); // TODO: Телефон с вида +7 915 387-32-72 к виду +7 (917) 625-6998 может бть nophone
                                     nameValuePairs.add(new BasicNameValuePair("id_chat", idChat));
                                     nameValuePairs.add(new BasicNameValuePair("id_member", settings.getString("id_user", null)));
                                     nameValuePairs.add(new BasicNameValuePair("message", "Я добавил "+names.getItem(which)+" к диалогу."));
@@ -286,6 +295,11 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
+    private String reformat(String s) {
+        //String[] numbers = s.split("-");
+        return s;//numbers[0] + "-" + numbers[1] + numbers[2];
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -316,13 +330,18 @@ public class ChatActivity extends AppCompatActivity {
         } else {
             init();
         }
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Чат");
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_add: {
-                        showContacts();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                            requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
+                            //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
+                        }
+                        else
+                            showContacts();
                         return true;
                     }
                 }

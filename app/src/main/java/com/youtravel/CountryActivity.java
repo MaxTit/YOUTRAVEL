@@ -132,7 +132,7 @@ public class CountryActivity extends AppCompatActivity {
     }
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Страны");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

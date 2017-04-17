@@ -135,7 +135,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void init_interface() {
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Настройки");
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -227,7 +228,7 @@ public class ExcursionsActivity extends AppCompatActivity {
         if (underframe.getChildCount() == 0){
             View mes = getLayoutInflater().inflate(R.layout.dump_text, underframe, false);
             underframe.addView(mes);
-            Button show_all = (Button) mes.findViewById(R.id.button);
+            ImageView show_all = (ImageView) mes.findViewById(R.id.button);
             show_all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -289,7 +290,7 @@ public class ExcursionsActivity extends AppCompatActivity {
 
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Экскурсии");
         final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

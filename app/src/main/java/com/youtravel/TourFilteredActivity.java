@@ -1,24 +1,32 @@
 package com.youtravel;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,13 +35,17 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 import static com.youtravel.StartActivityAlternative.*;
 
-public class TourFilteredActivity extends AppCompatActivity {
+public class TourFilteredActivity extends AppCompatActivity implements ScrollViewListener {
 
     static DBHelper dbHelper;
     public static ArrayList<String> country_filter;
@@ -48,7 +60,30 @@ public class TourFilteredActivity extends AppCompatActivity {
     private static Bundle freshServices;
     private static Bundle freshExcursions;
     private static Date earliest;
+    long diff0 = 0;
+    static Boolean fl = true;
+    static int limit = 0;
 
+    @Override
+    public void onScrollChanged(ScrollViewExt scrollView, int x, int y, int oldx, int oldy) {
+        // We take the last son in the scrollview
+        //  LinearLayout content =(LinearLayout)findViewById(R.id.linearLayout2);
+        View view = (View) scrollView.getChildAt(scrollView.getChildCount() - 1);
+        long diff = (view.getBottom() - (scrollView.getHeight() + scrollView.getScrollY()));
+        // if diff is zero, then the bottom has been reached
+        if (diff == 0 && diff0!=0 ) {
+            // do stuff
+            if(fl)
+            {
+                fl = false;
+                refreshInterface(3);
+
+            }
+        }
+        else fl = true;
+        diff0 =diff;
+        Log.d("nololololo", "" + diff + "" + diff0);
+    }
 
     public static Bundle getFreshTours() {
         return freshTours;
@@ -82,6 +117,8 @@ public class TourFilteredActivity extends AppCompatActivity {
         TourFilteredActivity.freshExcursions = freshExcursions;
     }
 
+    static String orderBy = "name ASC";
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -91,11 +128,20 @@ public class TourFilteredActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        limit = 0;
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/SegoeBold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_tour_filtered);
+        ScrollViewExt scroll = (ScrollViewExt) findViewById(R.id.scroll_view);
+        scroll.setScrollViewListener(this);
         init_interface();
         filled = true;
-        LinearLayout underframe = (LinearLayout) findViewById(R.id.content_rel);
+        LinearLayout underframe = (LinearLayout) findViewById(R.id.c);
         View loading = getLayoutInflater().inflate(R.layout.loading, underframe, false);
         underframe.addView(loading);
 
@@ -109,10 +155,14 @@ public class TourFilteredActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         if(hasFocus && filled){
             refreshInterface(0);
-            LinearLayout underframe = (LinearLayout) findViewById(R.id.content_rel);
             //underframe.removeViewAt(0);
             filled = false;
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     private boolean outOfRange(ArrayList<Date> dateList, Date dateMin, Date dateMax) {
@@ -175,27 +225,56 @@ public class TourFilteredActivity extends AppCompatActivity {
         }
     };
 
+    public boolean isTablet(Context context) {
+        boolean xlarge = ((context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 4);
+        boolean large = ((context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
+        return (xlarge || large);
+    }
+
     private void refreshInterface(int mode){
 
-
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        final boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
         dbHelper = new DBHelper(this);
         LinearLayout underframe = (LinearLayout) findViewById(R.id.content_rel);
+        //LinearLayout underframe1 = underframe;
+        ArrayList<Integer> imageViews = new ArrayList<>();
+        ArrayList<String> subjects = new ArrayList<>(), id_subjects = new ArrayList<>();
+        String content_header;
+        boolean isTablet = isTablet(this);
+        String day;
+
+//        int splitter = -1;
+//        try{
+//            underframe1 = (LinearLayout) findViewById(R.id.content_rel2);
+//        }
+//        catch (NullPointerException ne){
+//            isTablet = false;
+//        }
         Cursor c;
         SQLiteDatabase db;
         Log.i("REFRESHED", "accessed refreshInterface() method");
-
-        try {
-            underframe.removeAllViewsInLayout();
-        } catch(NullPointerException ne) {}
+        if (mode != 3)
+            try {
+                underframe.removeAllViewsInLayout();
+                limit = 0;
+            } catch(NullPointerException ne) {}
 
         db = dbHelper.getWritableDatabase();
-        String b = make_filtered_query(country_filter, kind_filter, city_filter, duration_filter);
-        c = db.rawQuery(b, new String[]{});
+        String b = make_filtered_query(country_filter, kind_filter, city_filter, duration_filter, orderBy);
+        c = db.rawQuery(b + " LIMIT 20 OFFSET " + limit, new String[]{});
+        Log.i("ScrRef", "" + limit);
+        limit+=10;
+
         Log.d("", "_____" + c.getCount() + "\n " + b);
         if (c.moveToFirst() && c.getCount() > 0) {
             c.moveToFirst();
             while (!c.isAfterLast()) {
-                View v;
+                LinearLayout pair;
+                View v = null;
                 final Tour tour = new Tour(c, this, getApplicationContext().getSharedPreferences("my_data", 0));
                 if (date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour.date != null && !tour.date.isEmpty())?tour.date.get(0):null) != "null" &&
                         outOfRange(tour.date, date_filter.get(0), date_filter.get(1))) {
@@ -208,62 +287,254 @@ public class TourFilteredActivity extends AppCompatActivity {
                     c.moveToNext();
                     continue;
                 }
-                v = getLayoutInflater().inflate(R.layout.catalogue_content, underframe, false);
-                underframe.addView(v);
+                else {
+                    pair = (LinearLayout) getLayoutInflater().inflate(R.layout.pair, underframe, false);
+                    underframe.addView(pair);
 
-                v.findViewById(R.id.bar).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(TourFilteredActivity.this, TourContentActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        intent.putExtra("tour", tour);
-                        startActivity(intent);
-                        overridePendingTransition(0, 0);
+                    v = getLayoutInflater().inflate(R.layout.catalogue_content, pair, false);
+                    pair.addView(v);
+                    v.findViewById(R.id.info_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(TourFilteredActivity.this, TourContentActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                            intent.putExtra("tour", tour);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
+                        }
+                    });
+
+                    v.findViewById(R.id.call_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+380504694030"));
+                            startActivity(Intent.createChooser(intent, "Позвонить"));
+                        }
+                    });
+
+                    final tools.ContactMailChat contact_mail = new tools.ContactMailChat(this, "tour", tour.id + "");
+                    v.findViewById(R.id.mail_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AlertDialog dialog = contact_mail.callType(tour.name);
+                            dialog.show();
+                        }
+                    });
+
+                    content_header = tour.name;
+
+
+                    final TextView header = (TextView) v.findViewById(R.id.content);
+                    final TextView content = (TextView) v.findViewById(R.id.articula);
+                    final TextView contentDay = (TextView) v.findViewById(R.id.articula1);
+                    header.setText(content_header);
+                    String days = "", city = "", duration = "";
+                    Cursor c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour.id, new String[]{});
+                    if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
+                        c_tour.moveToFirst();
+                        days = c_tour.getString(19);
+                        duration = c_tour.getString(4);
                     }
-                });
 
-                String content_header = tour.name + "\n" + ((double) Math.round(tour.price * 100)) / 100 + " " + tour.currency;              //+ StartActivity.make_date(tour.date) +"\n"+ tour.annotation;
+                    Cursor c_city = db.rawQuery("SELECT * FROM cities WHERE id = " + tour.id_city, new String[]{});
+                    if (c_city.moveToFirst() && c_city.getCount() > 0) {
+                        c_city.moveToFirst();
+                        city = c_city.getString(2);
+                    }
+                    Calendar cal = Calendar.getInstance();
+                    cal.set(2900, 11, 11);
+                    if (earliest == null)
+                        outOfRange(tour.date, Calendar.getInstance().getTime(), cal.getTime());
+                    content_header = String.valueOf(Math.round((double) Math.round(tour.price * 100) / 100)) + " " + tour.currency;
 
-                final TextView header = (TextView) v.findViewById(R.id.content);
-                final TextView content = (TextView) v.findViewById(R.id.articula);
-                header.setText(content_header);
-                String city = "", country = "";
-                Cursor c_city = db.rawQuery("SELECT * FROM cities WHERE id = " + tour.id_city, new String[]{});
-                if (c_city.moveToFirst() && c_city.getCount() > 0) {
-                    c_city.moveToFirst();
-                    city = c_city.getString(2);
+                    // -------------------------------------------------------------------------------------------
+                    final String[] urls = c.getString(12).split(",");
+                    if (!urls[0].isEmpty()) {
+                        final ImageView imageView = (ImageView) v.findViewById(R.id.image);
+                        if ((new File(getCacheDir() + "/Images/" + urls[0])).exists()) {
+                            BitmapFactory.Options options = new BitmapFactory.Options();
+                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                            Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls[0], options);
+                            imageView.setImageBitmap(bitmap_img);
+                            Log.i("ImDow", "Subject = " + c.getString(0) + urls[0]);
+                        } else {
+                            final String subject = "tour", id_subject = c.getString(0);
+                            if (isConnected)
+                                imageView.post(new Runnable() {
+                                    public void run() {
+                                        if ((new File(getCacheDir() + "/Images").exists())) {
+                                            Log.i("ImDow", "true");
+                                        }
+                                        (new ImageDownloader(TourFilteredActivity.this, subject, id_subject)).run();
+                                        if ((new File(getCacheDir() + "/Images/" + urls[0])).exists()) {
+                                            BitmapFactory.Options options = new BitmapFactory.Options();
+                                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                                            Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls[0], options);
+                                            imageView.setImageBitmap(bitmap_img);
+                                        }
+                                    }
+                                });
+                        }
+                    }
+                    // -------------------------------------------------------------------------------------------
+                    earliest = null;
+                    c.moveToNext();
+                    c_city.close();
+                    c_tour.close();
+
+                    int dur = Integer.parseInt(duration);
+                    if ((dur > 10 && dur < 20)) day = "дней";
+                    else if (dur % 10 == 1) day = "день";
+                    else if (dur % 10 <= 4 && dur % 10 != 0) day = "дня";
+                    else day = "дней";
+                    contentDay.setText(city + ", " + duration + " " + day + (!days.isEmpty() ? (": " + days) : ""));
+                    content.setText("от " + content_header);
+
+
                 }
+                // **********************************************************************************************************************************
 
-                Cursor c_country = db.rawQuery("SELECT * FROM countries WHERE id = " + tour.id_country, new String[]{});
-                if (c_country.moveToFirst() && c_country.getCount() > 0) {
-                    c_country.moveToFirst();
-                    country = c_country.getString(1);
+
+                if (!c.isAfterLast() && isTablet) {
+                    View v1;
+                    final Tour tour1 = new Tour(c, this, getApplicationContext().getSharedPreferences("my_data", 0));
+                    while ((date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour1.date != null && !tour1.date.isEmpty()) ? tour1.date.get(0) : null) != "null" &&
+                            outOfRange(tour1.date, date_filter.get(0), date_filter.get(1))) || (price_filter != null && !price_filter.isEmpty() &&
+                            (tour1.price < price_filter.get(0) || tour1.price > price_filter.get(1)))) {
+                        if (c.isAfterLast()) break;
+                        Log.d("", "+++++++++++++++++" + StartActivity.make_date(date_filter.get(0)));
+                        c.moveToNext();
+                        Log.d("", "+++++++++++++++++" + StartActivity.make_date(date_filter.get(0)));
+                    }
+                    if (c.isAfterLast()) {
+                        View v2 = getLayoutInflater().inflate(R.layout.catalogue_content2, pair, false);
+                        v2.setVisibility(View.INVISIBLE);
+                        pair.addView(v2);
+                        break;
+                    }
+
+
+                    v1 = getLayoutInflater().inflate(R.layout.catalogue_content2, pair, false);
+                    pair.addView(v1);
+                    v1.findViewById(R.id.info_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(TourFilteredActivity.this, TourContentActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                            intent.putExtra("tour", tour1);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
+                        }
+                    });
+
+                    v1.findViewById(R.id.call_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+380504694030"));
+                            startActivity(Intent.createChooser(intent, "Позвонить"));
+                        }
+                    });
+
+                    final tools.ContactMailChat contact_mail = new tools.ContactMailChat(this, "tour", tour1.id + "");
+                    v1.findViewById(R.id.mail_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AlertDialog dialog = contact_mail.callType(tour1.name);
+                            dialog.show();
+                        }
+                    });
+
+                    content_header = tour1.name;
+
+
+                    final TextView header1 = (TextView) v1.findViewById(R.id.content);
+                    final TextView content1 = (TextView) v1.findViewById(R.id.articula);
+                    final TextView contentDay1 = (TextView) v1.findViewById(R.id.articula1);
+                    header1.setText(content_header);
+                    String days = "";
+                    String city = "";
+                    String duration = "";
+                    Cursor c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour1.id, new String[]{});
+                    if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
+                        c_tour.moveToFirst();
+                        days = c_tour.getString(19);
+                        duration = c_tour.getString(4);
+                    }
+
+                    Cursor c_city = db.rawQuery("SELECT * FROM cities WHERE id = " + tour1.id_city, new String[]{});
+                    if (c_city.moveToFirst() && c_city.getCount() > 0) {
+                        c_city.moveToFirst();
+                        city = c_city.getString(2);
+                    }
+                    Calendar cal = Calendar.getInstance();
+                    cal.set(2900, 11, 11);
+                    if (earliest == null)
+                        outOfRange(tour1.date, Calendar.getInstance().getTime(), cal.getTime());
+                    content_header = String.valueOf(Math.round((double) Math.round(tour1.price * 100) / 100)) + " " + tour1.currency;
+
+                    // -------------------------------------------------------------------------------------------
+                    final String [] urls1 = c.getString(12).split(",");
+                    if (!urls1[0].isEmpty()){
+                        final ImageView imageView = (ImageView)v1.findViewById(R.id.image);
+                        if ((new File(getCacheDir() + "/Images/" + urls1[0])).exists()) {
+                            BitmapFactory.Options options = new BitmapFactory.Options();
+                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                            Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls1[0], options);
+                            imageView.setImageBitmap(bitmap_img);
+                            Log.i("ImDow", "Subject = " + c.getString(0) + urls1[0]);
+                        }
+                        else{
+                            final String subject = "tour", id_subject = c.getString(0);
+
+                            if (isConnected)
+                                imageView.post(new Runnable() {
+                                    public void run() {
+                                        if ((new File(getCacheDir() + "/Images").exists())) {
+                                            Log.i("ImDow", "true");
+                                        }
+                                        (new ImageDownloader(TourFilteredActivity.this, subject, id_subject)).run();
+                                        if ((new File(getCacheDir() + "/Images/" + urls1[0])).exists()) {
+                                            BitmapFactory.Options options = new BitmapFactory.Options();
+                                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                                            Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls1[0], options);
+                                            imageView.setImageBitmap(bitmap_img);
+                                        }
+                                    }
+                                });
+                        }
+                    }
+                    // -------------------------------------------------------------------------------------------
+
+                    earliest = null;
+                    c.moveToNext();
+                    c_city.close();
+                    c_tour.close();
+                    int dur = Integer.parseInt(duration);
+                    if ((dur > 10 && dur < 20)) day = "дней";
+                    else if (dur % 10 == 1) day = "день";
+                    else if (dur % 10 <= 4 && dur % 10 != 0) day = "дня";
+                    else day = "дней";
+                    contentDay1.setText(city + ", " + duration + " " + day + (!days.isEmpty() ? (": " + days) : ""));
+                    content1.setText("от " + content_header);
+
                 }
-                Calendar cal = Calendar.getInstance();
-                cal.set(2900,11,11);
-                if (earliest==null) outOfRange(tour.date, Calendar.getInstance().getTime(), cal.getTime());
-                content_header = "Дата: " + StartActivity.make_date(earliest)
-                        + "\n" + "Продолжительность: "
-                        + tour.duration + " " + ((tour.duration % 10 == 1) ? "день" :
-                        ((tour.duration % 10 > 1 && tour.duration % 10 < 5) ? "дня" : "дней"))
-                        + "\n" + "Тип экскурсии: " + ""
-                        + "\n" + "Город (Страна): " + city
-                        + " (" + country + ")";
-
-
-                earliest = null;
-                c.moveToNext();
-                c_city.close();
-                c_country.close();
-
-                content.setText(content_header);
+                else if (isTablet){
+                    View v1 = getLayoutInflater().inflate(R.layout.catalogue_content2, pair, false);
+                    v1.setVisibility(View.INVISIBLE);
+                    pair.addView(v1);
+                }
             }
+
+
+
+            // -------------------------------------------------------------------------------------------
         }
 
         if (underframe.getChildCount() == 0){
-            View mes = getLayoutInflater().inflate(R.layout.dump_text, underframe, false);
-            underframe.addView(mes);
-            Button show_all = (Button) mes.findViewById(R.id.button);
+            LinearLayout underframe2 = (LinearLayout) findViewById(R.id.c);
+            View mes = getLayoutInflater().inflate(R.layout.dump_text, underframe2, false);
+            underframe2.addView(mes);
+            ImageView show_all = (ImageView) mes.findViewById(R.id.button);
             show_all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -314,8 +585,11 @@ public class TourFilteredActivity extends AppCompatActivity {
 
 
     private void init_interface() {
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Каталог туров");
         final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+   //     menu.myToolbar.setTitle("Каталог туров");
+
+
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -330,6 +604,76 @@ public class TourFilteredActivity extends AppCompatActivity {
                     }
                 }
                 return false;
+            }
+        });
+
+        final TextView sortName = (TextView) findViewById(R.id.sort_name);
+        final TextView sortPrice = (TextView) findViewById(R.id.sort_price);
+        final TextView sortNew = (TextView) findViewById(R.id.sort_new);
+        if (orderBy.equals("name ASC")) {
+            SpannableString content = new SpannableString(sortName.getText());
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            sortName.setText(content);
+            sortName.setTextColor(getResources().getColor(R.color.blue));
+        }
+        else if (orderBy.equals("price ASC")) {
+            SpannableString content = new SpannableString(sortPrice.getText());
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            sortPrice.setText(content);
+            sortPrice.setTextColor(getResources().getColor(R.color.blue));
+        }
+        else if (orderBy.equals("date DESC")) {
+            SpannableString content = new SpannableString(sortNew.getText());
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            sortNew.setText(content);
+            sortNew.setTextColor(getResources().getColor(R.color.blue));
+        }
+
+        sortName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpannableString content = new SpannableString(sortName.getText());
+                content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+                sortName.setText(content);
+                sortPrice.setText("цене");
+                sortNew.setText("новизне");
+                orderBy = "name ASC";
+                refreshInterface(1);
+                sortName.setTextColor(getResources().getColor(R.color.blue));
+                sortPrice.setTextColor(getResources().getColor(R.color.gray_light));
+                sortNew.setTextColor(getResources().getColor(R.color.gray_light));
+            }
+        });
+
+        sortPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpannableString content = new SpannableString(sortPrice.getText());
+                content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+                sortPrice.setText(content);
+                sortName.setText("названию");
+                sortNew.setText("новизне");
+                orderBy = "price ASC";
+                refreshInterface(1);
+                sortPrice.setTextColor(getResources().getColor(R.color.blue));
+                sortName.setTextColor(getResources().getColor(R.color.gray_light));
+                sortNew.setTextColor(getResources().getColor(R.color.gray_light));
+            }
+        });
+
+        sortNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpannableString content = new SpannableString(sortNew.getText());
+                content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+                sortNew.setText(content);
+                sortPrice.setText("цене");
+                sortName.setText("названию");
+                orderBy = "date DESC";
+                refreshInterface(1);
+                sortNew.setTextColor(getResources().getColor(R.color.blue));
+                sortPrice.setTextColor(getResources().getColor(R.color.gray_light));
+                sortName.setTextColor(getResources().getColor(R.color.gray_light));
             }
         });
 
@@ -393,7 +737,7 @@ public class TourFilteredActivity extends AppCompatActivity {
 
 
     private String make_filtered_query(ArrayList<String> country_filter, ArrayList<String> kind_filter,
-                                       ArrayList<String> city_filter, ArrayList<Integer> duration_filter) {
+                                       ArrayList<String> city_filter, ArrayList<Integer> duration_filter, String orderBy) {
         final String name_country = " id_country = ";
         final String name_kind = " id_kind = ";
         final String name_city = " id_city = ";
@@ -406,7 +750,7 @@ public class TourFilteredActivity extends AppCompatActivity {
                 + ((!transcript_filter(city_filter, name_city).isEmpty()) ? (" AND " + transcript_filter(city_filter, name_city))
                 : " ")
                 + ((duration_filter != null) ? "AND duration >= " + duration_filter.get(0).toString() + " AND duration <= " + duration_filter.get(1).toString() : "")
-                + ") ORDER BY name ASC";
+                + ") ORDER BY " + orderBy;
     }
 
     private String transcript_filter(ArrayList<String> filter, String name) {
@@ -456,11 +800,5 @@ public class TourFilteredActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
     }
 }

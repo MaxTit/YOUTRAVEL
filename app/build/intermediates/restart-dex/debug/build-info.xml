@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="22"
+    api-level="19"
     density="tvdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="236356721373929"
-    token="-2213640991454528585"
+    timestamp="34404498501239"
+    token="6704050224548588404"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="14842" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1160" />
+        duration="0" />
     <task
         name="verifier"
-        duration="217" />
+        duration="0" />
 
     <artifact
-        location="C:\Android Studio Projects\YOUTRAVEL\app\build\outputs\apk\app-debug.apk"
+        location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="236356721373929"
+        timestamp="34404498501239"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Android Studio Projects\YOUTRAVEL\app\build\outputs\apk\app-debug.apk"
+            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 

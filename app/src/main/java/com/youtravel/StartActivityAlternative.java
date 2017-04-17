@@ -1,8 +1,10 @@
 package com.youtravel;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.KeyRep;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
@@ -35,9 +37,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -213,6 +217,7 @@ public class StartActivityAlternative extends AppCompatActivity {
     static DBHelper dbHelper;
     static String pathtocache;
     static SharedPreferences settings;
+
     public static String server = "http://youtravel-su.1gb.ru/";
 
     @Override
@@ -222,6 +227,7 @@ public class StartActivityAlternative extends AppCompatActivity {
         mProgress = (ProgressBar) findViewById(R.id.progressBar);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         settings = getApplicationContext().getSharedPreferences("my_data", 0);
+
         if (settings.getString("currency_short_name", null) == null){
 
         }
@@ -247,7 +253,6 @@ public class StartActivityAlternative extends AppCompatActivity {
 
     }
 
-
     private void initEntrance(Boolean isConnected){
         if (isConnected) {
             mProgress.setVisibility(ProgressBar.VISIBLE);
@@ -270,6 +275,22 @@ public class StartActivityAlternative extends AppCompatActivity {
     }
 
     ////////////////////////////////////
+    private static void checkImage(String subject, String id_subject, String urls, SQLiteDatabase db){
+        for ( String url : urls.split(",")) {
+            Cursor c;
+            String p_query = "SELECT * FROM images WHERE url = ?";
+            c = db.rawQuery(p_query,new String[]{url});
+            if (c.getCount() == 0) {
+                ContentValues cv = new ContentValues();
+                cv.put("subject", subject);
+                cv.put("id_subject", id_subject);
+                cv.put("url", url);
+                cv.put("is_downloaded", -1);
+                db.insert("images", null, cv);
+            }
+            c.close();
+        }
+    }
 
     public static int update_countries() {
         //creating counter for new objects
@@ -379,6 +400,8 @@ public class StartActivityAlternative extends AppCompatActivity {
 
                                 if (json_data.getString("img") != "null")
                                     cv.put("img", json_data.getString("img"));
+
+                                checkImage("county", json_data.getString("id"), json_data.getString("img"), db);
 
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
@@ -513,6 +536,8 @@ public class StartActivityAlternative extends AppCompatActivity {
 
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("city", json_data.getString("id"), json_data.getString("img"), db);
 
                                     db.insert("cities", null, cv);
                             }
@@ -801,6 +826,8 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
 
+                                checkImage("event", json_data.getString("id"), json_data.getString("img"), db);
+
                                 if (last_update == null) {
                                     db.insert("events", null, cv);
                                     drain_new.add(json_data.getInt("id"));
@@ -879,7 +906,7 @@ public class StartActivityAlternative extends AppCompatActivity {
             fl = false;
             Log.e("log_tag", "Error converting result " + e.toString());
         }
-        if (fl == true) {
+        if (fl) {
             //paring data
             try {
                 if (!result.contains("null")) {
@@ -922,6 +949,8 @@ public class StartActivityAlternative extends AppCompatActivity {
 
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("journey_kind", json_data.getString("id"), json_data.getString("img"), db);
 
                                     db.insert("journey_kinds", null, cv);
                             }
@@ -1049,6 +1078,8 @@ public class StartActivityAlternative extends AppCompatActivity {
 
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("service", json_data.getString("id"), json_data.getString("img"), db);
 
                                 if (last_update == null) {
                                     db.insert("services", null, cv);
@@ -1211,8 +1242,13 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("id_comment") != "null")
                                     cv.put("id_comment", json_data.getString("id_comment"));
 
+                                if (json_data.getString("days") != "null")
+                                    cv.put("days", json_data.getString("days"));
+
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("excursion", json_data.getString("id"), json_data.getString("img"), db);
 
                                 if (last_update == null) {
                                     db.insert("excursions", null, cv);
@@ -1369,8 +1405,13 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("id_comment") != "null")
                                     cv.put("id_comment", json_data.getString("id_comment"));
 
+                                if (json_data.getString("days") != "null")
+                                    cv.put("days", json_data.getString("days"));
+
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("tour", json_data.getString("id"), json_data.getString("img"), db);
 
                                 if (last_update == null) {
                                     db.insert("tours", null, cv);
@@ -1492,6 +1533,8 @@ public class StartActivityAlternative extends AppCompatActivity {
 
                                 if (json_data.getString("date_update") != "null")
                                     cv.put("date_update", json_data.getString("date_update"));
+
+                                checkImage("comment", json_data.getString("id"), json_data.getString("img"), db);
 
                                     db.insert("comments", null, cv);
                             }
@@ -2057,7 +2100,6 @@ public class StartActivityAlternative extends AppCompatActivity {
         mProgressStatus += 10;
     }
 
-
     public static void update_currency() {
         //creating object for data
         ContentValues cv = new ContentValues();
@@ -2157,7 +2199,6 @@ public class StartActivityAlternative extends AppCompatActivity {
         }
         db.close();
     }
-
 
     public static void update_currency_data() {
         //creating object for data

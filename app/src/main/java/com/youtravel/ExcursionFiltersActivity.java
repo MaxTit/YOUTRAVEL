@@ -53,7 +53,7 @@ public class ExcursionFiltersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_excursion_filters);
-        new MainMenu(this);
+        new MainMenu(this, "Экскурсии");
         dbHelper = new DBHelper(this);
         spinner_country = (Spinner) findViewById(R.id.spinner);
         spinner_city = (Spinner) findViewById(R.id.spinner_city);

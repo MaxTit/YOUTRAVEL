@@ -56,7 +56,7 @@ public class CatalogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_catalogue);
-        new MainMenu(this);
+        new MainMenu(this, "Каталог туров");
         dbHelper = new DBHelper(this);
     //    rangeSeekbar = (CrystalRangeSeekbar) findViewById(R.id.rangeSeekbar1);
         spinner_country = (Spinner) findViewById(R.id.spinner);

@@ -91,7 +91,7 @@ public class ExcursionContentActivity extends AppCompatActivity {
 
 
     private void init_interface(){
-        final MainMenu menu = new MainMenu(this);
+        final MainMenu menu = new MainMenu(this, "Экскурсии");
 
         menu.myToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

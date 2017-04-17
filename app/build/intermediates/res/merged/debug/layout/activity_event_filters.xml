@@ -144,9 +144,9 @@
         android:layout_width="@dimen/list_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#434a54"
+        android:background="@color/blue"
         android:choiceMode="singleChoice"
-        android:divider="#8c9197"
+        android:divider="@color/white"
         android:dividerHeight="1dp" />
 
 </android.support.v4.widget.DrawerLayout>

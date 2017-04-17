@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,8 @@ public class MainMenu {
     float lastTranslate = 0.0f;
     public final DrawerLayout mDrawerLayout;
     public final Toolbar myToolbar;
-    public MainMenu(final AppCompatActivity context)
+
+    public MainMenu(final AppCompatActivity context, String name)
     {
         final ListView mDrawerList = (ListView) context.findViewById(R.id.left_drawer);
         mDrawerLayout = (DrawerLayout) context.findViewById(R.id.drawer_layout);
