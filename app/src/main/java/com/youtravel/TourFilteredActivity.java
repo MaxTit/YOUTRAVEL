@@ -34,12 +34,15 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.appindexing.FirebaseUserActions;
+import com.google.firebase.appindexing.builders.Actions;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import tools.ContactMailChat;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -276,8 +279,12 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                 LinearLayout pair;
                 View v = null;
                 final Tour tour = new Tour(c, this, getApplicationContext().getSharedPreferences("my_data", 0));
-                if (date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour.date != null && !tour.date.isEmpty())?tour.date.get(0):null) != "null" &&
-                        outOfRange(tour.date, date_filter.get(0), date_filter.get(1))) {
+                ArrayList<Date> period = new ArrayList<Date>();
+                period.add(tour.period_from);
+                period.add(tour.period_to);
+                //Log.d("period=",period.get(0)+"");
+                if (date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour.period_from != null)?tour.period_from:null) != "null" &&
+                        outOfRange(period, date_filter.get(0), date_filter.get(1))) {
                     Log.d("", "+++++++++++++++++" + StartActivity.make_date(date_filter.get(0)));
                     c.moveToNext();
                     continue;
@@ -312,7 +319,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                         }
                     });
 
-                    final tools.ContactMailChat contact_mail = new tools.ContactMailChat(this, "tour", tour.id + "");
+                    final ContactMailChat contact_mail = new ContactMailChat(this, "tour", tour.id + "");
                     v.findViewById(R.id.mail_button).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -332,7 +339,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                     Cursor c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour.id, new String[]{});
                     if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
                         c_tour.moveToFirst();
-                        days = c_tour.getString(19);
+                        days = tour.days;
                         duration = c_tour.getString(4);
                     }
 
@@ -344,11 +351,11 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                     Calendar cal = Calendar.getInstance();
                     cal.set(2900, 11, 11);
                     if (earliest == null)
-                        outOfRange(tour.date, Calendar.getInstance().getTime(), cal.getTime());
+                        outOfRange(period, Calendar.getInstance().getTime(), cal.getTime());
                     content_header = String.valueOf(Math.round((double) Math.round(tour.price * 100) / 100)) + " " + tour.currency;
 
                     // -------------------------------------------------------------------------------------------
-                    final String[] urls = c.getString(12).split(",");
+                    final String[] urls = tour.img.split(",");
                     if (!urls[0].isEmpty()) {
                         final ImageView imageView = (ImageView) v.findViewById(R.id.image);
                         if ((new File(getCacheDir() + "/Images/" + urls[0])).exists()) {
@@ -356,9 +363,9 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                             Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls[0], options);
                             imageView.setImageBitmap(bitmap_img);
-                            Log.i("ImDow", "Subject = " + c.getString(0) + urls[0]);
+                            Log.i("ImDow", "Subject = " + tour.id + urls[0]);
                         } else {
-                            final String subject = "tour", id_subject = c.getString(0);
+                            final String subject = "tour", id_subject = tour.id+"";
                             if (isConnected)
                                 imageView.post(new Runnable() {
                                     public void run() {
@@ -398,8 +405,11 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                 if (!c.isAfterLast() && isTablet) {
                     View v1;
                     final Tour tour1 = new Tour(c, this, getApplicationContext().getSharedPreferences("my_data", 0));
-                    while ((date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour1.date != null && !tour1.date.isEmpty()) ? tour1.date.get(0) : null) != "null" &&
-                            outOfRange(tour1.date, date_filter.get(0), date_filter.get(1))) || (price_filter != null && !price_filter.isEmpty() &&
+                    ArrayList<Date> period1 = new ArrayList<Date>();
+                    period1.add(tour1.period_from);
+                    period1.add(tour1.period_to);
+                    while ((date_filter != null && !date_filter.isEmpty() && StartActivity.make_date((tour1.period_from != null ) ? tour1.period_from : null) != "null" &&
+                            outOfRange(period1, date_filter.get(0), date_filter.get(1))) || (price_filter != null && !price_filter.isEmpty() &&
                             (tour1.price < price_filter.get(0) || tour1.price > price_filter.get(1)))) {
                         if (c.isAfterLast()) break;
                         Log.d("", "+++++++++++++++++" + StartActivity.make_date(date_filter.get(0)));
@@ -435,7 +445,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                         }
                     });
 
-                    final tools.ContactMailChat contact_mail = new tools.ContactMailChat(this, "tour", tour1.id + "");
+                    final ContactMailChat contact_mail = new ContactMailChat(this, "tour", tour1.id + "");
                     v1.findViewById(R.id.mail_button).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -457,7 +467,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                     Cursor c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour1.id, new String[]{});
                     if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
                         c_tour.moveToFirst();
-                        days = c_tour.getString(19);
+                        days = tour1.days;
                         duration = c_tour.getString(4);
                     }
 
@@ -469,11 +479,12 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                     Calendar cal = Calendar.getInstance();
                     cal.set(2900, 11, 11);
                     if (earliest == null)
-                        outOfRange(tour1.date, Calendar.getInstance().getTime(), cal.getTime());
+                        outOfRange(period1, Calendar.getInstance().getTime(), cal.getTime());
                     content_header = String.valueOf(Math.round((double) Math.round(tour1.price * 100) / 100)) + " " + tour1.currency;
 
                     // -------------------------------------------------------------------------------------------
-                    final String [] urls1 = c.getString(12).split(",");
+
+                    final String [] urls1 = tour1.img.split(",");
                     if (!urls1[0].isEmpty()){
                         final ImageView imageView = (ImageView)v1.findViewById(R.id.image);
                         if ((new File(getCacheDir() + "/Images/" + urls1[0])).exists()) {
@@ -481,10 +492,10 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                             Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls1[0], options);
                             imageView.setImageBitmap(bitmap_img);
-                            Log.i("ImDow", "Subject = " + c.getString(0) + urls1[0]);
+                            Log.i("ImDow", "Subject = " + tour1.id + urls1[0]);
                         }
                         else{
-                            final String subject = "tour", id_subject = c.getString(0);
+                            final String subject = "tour", id_subject = tour1.id+"";
 
                             if (isConnected)
                                 imageView.post(new Runnable() {
@@ -790,15 +801,28 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        FirebaseUserActions.getInstance().start(getIndexApiAction0());
     }
 
     @Override
     public void onStop() {
-        super.onStop();
+        super.onStop();// ATTENTION: This was auto-generated to implement the App Indexing API.
+// See https://g.co/AppIndexing/AndroidStudio for more information.
+        FirebaseUserActions.getInstance().end(getIndexApiAction0());
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public com.google.firebase.appindexing.Action getIndexApiAction0() {
+        return Actions.newView("TourFiltered", "http://[ENTER-YOUR-URL-HERE]");
     }
 }

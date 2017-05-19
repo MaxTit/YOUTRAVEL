@@ -4,10 +4,6 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_search.png"
     },
     {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_filter.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_filter.png"
-    },
-    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\loading.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\loading.png"
     },
@@ -18,10 +14,6 @@
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_filter.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_filter.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\loading.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\loading.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_cancel.png",
@@ -38,34 +30,6 @@
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_like.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_like.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_mail.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_mail.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_like.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_like.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_search.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_search.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_add.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_add.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_tick.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_tick.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_cancel.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xxhdpi\\ic_cancel.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_add.png",

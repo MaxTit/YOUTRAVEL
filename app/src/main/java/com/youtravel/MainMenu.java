@@ -86,6 +86,7 @@ public class MainMenu {
                     case 0:
                     {
                         Log.d("case 0","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, TourFilteredActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -97,6 +98,7 @@ public class MainMenu {
                     case 1:
                     {
                         Log.d("case 1","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, CountryActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -108,6 +110,7 @@ public class MainMenu {
                     case 2:
                     {
                         Log.d("case 2","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, JourneyKindActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -119,6 +122,7 @@ public class MainMenu {
                     case 3:
                     {
                         Log.d("case 3","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, Events.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -130,6 +134,7 @@ public class MainMenu {
                     case 4:
                     {
                         Log.d("case 4","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, ExcursionsActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -141,6 +146,7 @@ public class MainMenu {
                     case 5:
                     {
                         Log.d("case 5","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, ServicesActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -152,6 +158,7 @@ public class MainMenu {
                     case 6:
                     {
                         Log.d("case 6","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, MenuChatActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -163,6 +170,7 @@ public class MainMenu {
                     case 7:
                     {
                         Log.d("case 7","BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, ProfileActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
@@ -174,6 +182,7 @@ public class MainMenu {
                     case 8:
                     {
                         Log.d("case 8", "BUTTON_TOUCHED");
+                        ImageDownloader.deleteImages(context);
                         Intent intent = new Intent(context, SettingsActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         mDrawerLayout.closeDrawer(Gravity.LEFT);

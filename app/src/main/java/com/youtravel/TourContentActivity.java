@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,13 +14,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,24 +33,115 @@ import java.util.ArrayList;
 import tools.Contact;
 
 public class TourContentActivity extends AppCompatActivity {
+    TabHost tabhost;
+    @SuppressWarnings("deprecation")
+    static ViewPager gallery;
+
+    @Override
+    protected void onResume()
+    {
+        System.gc();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        System.gc();
+    }
+
+    protected void onDestroy() {
+
+        unbindDrawables(findViewById(R.id.drawer_layout));
+        System.gc();
+        Runtime.getRuntime().gc();
+        super.onDestroy();
+    }
+
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+            view.getBackground().setCallback(null);
+        }
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+            if (!(view instanceof AdapterView<?>))
+                ((ViewGroup) view).removeAllViews();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_tour_content);
+        tabhost = (TabHost) findViewById(android.R.id.tabhost);
+        final FrameLayout frame = (FrameLayout) findViewById(R.id.content_frame);
         init_interface();
         final Tour tour = (Tour)getIntent().getSerializableExtra("tour");
-        final tools.Contact contact_call = new tools.Contact(this,"tour", tour.id+"");
-        output(tour.html);
-        (findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
+        //final tools.Contact contact_call = new tools.Contact(this,"tour", tour.id+"");
+        output(tour);
+       /* (findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("lololo","lololol");
                 AlertDialog dialog = contact_call.callType(tour.name);
                 dialog.show();
             }
-        });
+        });*/
+        tabhost.setup();
+        TabHost.TabSpec tabspec;
 
+        tabspec = tabhost.newTabSpec("tag1");
+        tabspec.setIndicator(getLayoutInflater().inflate (R.layout.tab_info, null));
+        tabspec.setContent(R.id.tab1);
+        tabhost.addTab(tabspec);
+
+        tabspec = tabhost.newTabSpec("tag2");
+        tabspec.setIndicator(getLayoutInflater().inflate (R.layout.tab_desc, null));
+        tabspec.setContent(R.id.tab2);
+        tabhost.addTab(tabspec);
+
+        tabspec = tabhost.newTabSpec("tag3");
+        tabspec.setIndicator(getLayoutInflater().inflate (R.layout.tab_coments, null));
+        tabspec.setContent(R.id.tab3);
+        tabhost.addTab(tabspec);
+
+        tabhost.setCurrentTabByTag("tag1");
+
+        tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            public void onTabChanged(String tabId) {
+                //Toast.makeText(getBaseContext(), "tabId = " + tabId, Toast.LENGTH_SHORT).show();
+
+                switch(tabId)
+                {
+                    case "tag1": break;
+                    case "tag2": break;
+                    case "tag3":
+                    {
+                    }break;
+                }
+            }
+        });
+        gallery = (ViewPager) findViewById(R.id.gallery1);
+        gallery.setAdapter(new GalleryAdapter(this,tour));
+        gallery.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected ( final int position) {
+               /* final TextView[] grl = {(TextView)findViewById(R.id.gr_a),(TextView)findViewById(R.id.gr_b),(TextView)findViewById(R.id.gr_c),(TextView)findViewById(R.id.gr_d),(TextView)findViewById(R.id.gr_e),(TextView)findViewById(R.id.gr_f)};
+
+                for (int i=0;i<grl.length;i++)
+                {
+
+                    if(i==(position%6))
+                        grl[i].setTextColor(Color.parseColor("#e4bd36"));
+                    else
+                        grl[i].setTextColor(Color.parseColor("#2e5a94"));
+                }*/
+            }
+
+        });
         /// Analytics
         Bundle params = new Bundle();
         SharedPreferences settings = getApplicationContext().getSharedPreferences("my_data", 0);
@@ -56,34 +153,9 @@ public class TourContentActivity extends AppCompatActivity {
     }
 
 
-    private void output(String content){
-        WebView webview = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = webview.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webview.requestFocusFromTouch();
-        getWindow().setFeatureInt( Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
-        final Activity activity = this;
-        webview.setWebChromeClient(new WebChromeClient() {
-            public void onProgressChanged(WebView view, int progress)
-            {
-//                if(progress < 100 && pd.getVisibility() == ProgressBar.GONE){
-//                    pd.setVisibility(ProgressBar.VISIBLE);
-//                }
-//                pd.setProgress(progress);
-//                if(progress == 100) {
-//                    pd.setVisibility(ProgressBar.GONE);
-//                }
-            }
-        });
-        webview.setWebViewClient(new WebViewClient() {
-
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(activity, "Oh no! " + description, Toast.LENGTH_SHORT).show();
-            }
-        });
-        Log.d("html",content);
-        webview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webview.loadData(content, "text/html; charset=utf-8", "utf-8"); //loadDataWithBaseURL( "file:///android_asset/", content, "text/html", "utf-8", null );
+    private void output(Tour content){
+        TextView title = (TextView) findViewById(R.id.title_tour);
+        title.setText(content.name);
 
     }
 

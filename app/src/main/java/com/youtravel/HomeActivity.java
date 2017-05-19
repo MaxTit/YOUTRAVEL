@@ -266,7 +266,7 @@ public class HomeActivity extends AppCompatActivity {
                 Cursor c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour.id, new String[]{});
                 if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
                     c_tour.moveToFirst();
-                    days = c_tour.getString(19);
+                    days = tour.days;
                     duration = c_tour.getString(4);
                 }
 
@@ -280,7 +280,7 @@ public class HomeActivity extends AppCompatActivity {
                 content_header = String.valueOf(Math.round((double) Math.round(tour.price * 100) / 100)) + " " + tour.currency;
 
 // -------------------------------------------------------------------------------------------
-                final String[] urls = c.getString(12).split(",");
+                final String[] urls = tour.img.split(",");
                 if (!urls[0].isEmpty()) {
                     final ImageView imageView = (ImageView) v.findViewById(R.id.image);
                     if ((new File(getCacheDir() + "/Images/" + urls[0])).exists()) {
@@ -288,9 +288,9 @@ public class HomeActivity extends AppCompatActivity {
                         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                         Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls[0], options);
                         imageView.setImageBitmap(bitmap_img);
-                        Log.i("ImDow", "Subject = " + c.getString(0) + urls[0]);
+                        Log.i("ImDow", "Subject = " + tour.id + urls[0]);
                     } else {
-                        final String subject = "tour", id_subject = c.getString(0);
+                        final String subject = "tour", id_subject = tour.id+"";
                         if (isConnected)
                             imageView.post(new Runnable() {
                                 public void run() {
@@ -374,7 +374,7 @@ public class HomeActivity extends AppCompatActivity {
                     c_tour = db.rawQuery("SELECT * FROM tours WHERE id = " + tour1.id, new String[]{});
                     if (c_tour.moveToFirst() && c_tour.getCount() > 0) {
                         c_tour.moveToFirst();
-                        days = c_tour.getString(19);
+                        days = tour1.days;
                         duration = c_tour.getString(4);
                     }
 
@@ -388,7 +388,7 @@ public class HomeActivity extends AppCompatActivity {
                     content_header = String.valueOf(Math.round((double) Math.round(tour1.price * 100) / 100)) + " " + tour1.currency;
 
 // -------------------------------------------------------------------------------------------
-                    final String[] urls1 = c.getString(12).split(",");
+                    final String[] urls1 = tour1.img.split(",");
                     if (!urls1[0].isEmpty()) {
                         final ImageView imageView = (ImageView) v.findViewById(R.id.image);
                         if ((new File(getCacheDir() + "/Images/" + urls1[0])).exists()) {
@@ -396,9 +396,9 @@ public class HomeActivity extends AppCompatActivity {
                             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                             Bitmap bitmap_img = BitmapFactory.decodeFile(getCacheDir() + "/Images/" + urls1[0], options);
                             imageView.setImageBitmap(bitmap_img);
-                            Log.i("ImDow", "Subject = " + c.getString(0) + urls1[0]);
+                            Log.i("ImDow", "Subject = " + tour1.id + urls1[0]);
                         } else {
-                            final String subject = "tour", id_subject = c.getString(0);
+                            final String subject = "tour", id_subject = tour1.id+"";
                             if (isConnected)
                                 imageView.post(new Runnable() {
                                     public void run() {

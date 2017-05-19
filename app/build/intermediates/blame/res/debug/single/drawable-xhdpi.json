@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_mail.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\ic_mail.png"
     },
@@ -14,18 +10,6 @@
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_mail.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\ic_mail.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_like.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\ic_like.png"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\loading.png",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\src\\main\\res\\drawable-xhdpi\\loading.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\loading.png",

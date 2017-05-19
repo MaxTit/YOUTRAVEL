@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.youtravel"
-    android:versionCode="14"
-    android:versionName="1.021" >
+    android:versionCode="16"
+    android:versionName="1.022" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -27,7 +27,6 @@
     <uses-permission android:name="com.youtravel.permission.C2D_MESSAGE" />
 
     <application
-        android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
         android:configChanges="orientation"
         android:icon="@drawable/ic_launcher"
@@ -138,6 +137,10 @@
             android:authorities="com.youtravel.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
+        <provider
+            android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:authorities="com.youtravel.com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

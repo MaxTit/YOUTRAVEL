@@ -1369,20 +1369,35 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("annotation") != "null")
                                     cv.put("annotation", json_data.getString("annotation"));
 
-                                if (json_data.getString("description") != "null")
-                                    cv.put("description", json_data.getString("description"));
-
                                 if (json_data.getString("extra_info") != "null")
                                     cv.put("extra_info", json_data.getString("extra_info"));
 
-                                if (json_data.getString("html") != "null")
-                                    cv.put("html", json_data.getString("html"));
+                                if (json_data.getString("schedule") != "null")
+                                    cv.put("schedule", json_data.getString("schedule"));
+
+                                if (json_data.getString("program") != "null")
+                                    cv.put("program", json_data.getString("program"));
+
+                                if (json_data.getString("composition") != "null")
+                                    cv.put("composition", json_data.getString("composition"));
+
+                                if (json_data.getString("transport") != "null")
+                                    cv.put("transport", json_data.getString("transport"));
+
+                                if (json_data.getString("transfer") != "null")
+                                    cv.put("transfer", json_data.getString("transfer"));
+
+                                if (json_data.getString("residence") != "null")
+                                    cv.put("residence", json_data.getString("residence"));
+
+                                if (json_data.getString("excursions") != "null")
+                                    cv.put("excursions", json_data.getString("excursions"));
+
+                                if (json_data.getString("services") != "null")
+                                    cv.put("services", json_data.getString("services"));
 
                                 if (json_data.getString("id_status") != "null")
                                     cv.put("id_status", json_data.getInt("id_status"));
-
-                                if (json_data.getString("link") != "null")
-                                    cv.put("link", json_data.getString("link"));
 
                                 if (json_data.getString("img") != "null")
                                     cv.put("img", json_data.getString("img"));
@@ -1393,14 +1408,14 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("currency") != "null")
                                     cv.put("currency", json_data.getString("currency"));
 
-                                if (json_data.getString("date") != "null")
-                                    cv.put("date", json_data.getString("date"));
+                                if (json_data.getString("period_from") != "null")
+                                    cv.put("period_from", json_data.getString("period_from"));
+
+                                if (json_data.getString("period_to") != "null")
+                                    cv.put("period_to", json_data.getString("period_to"));
 
                                 if (json_data.getString("id_cities") != "null")
                                     cv.put("id_cities", json_data.getString("id_cities"));
-
-                                if (json_data.getString("start_point") != "null")
-                                    cv.put("start_point", json_data.getString("start_point"));
 
                                 if (json_data.getString("id_comment") != "null")
                                     cv.put("id_comment", json_data.getString("id_comment"));

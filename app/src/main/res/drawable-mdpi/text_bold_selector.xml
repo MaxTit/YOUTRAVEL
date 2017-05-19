@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:visibility="visible" android:color="#5f98fc" android:state_selected="true"/>
+    <item android:visibility="visible" android:color="#5f98fc" android:state_focused="true"/>
+    <item android:visibility="visible" android:color="#5f98fc" android:state_pressed="true"/>
+    <item android:visibility="gone" android:color="#5f98fc"/>
+
+</selector>

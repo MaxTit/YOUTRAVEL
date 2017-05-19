@@ -46,7 +46,12 @@ public class ImageDownloader {
         }
 
     }
-        private class DownloadFileFromURL1 extends AsyncTask<String, Integer, String> {
+    public static void deleteImages(Context context)
+    {
+            (new DownloadFileFromURL1_delete(context)).execute();
+
+    }
+    private class DownloadFileFromURL1 extends AsyncTask<String, Integer, String> {
         private String subject, id_subject, fileName;
 
         protected DownloadFileFromURL1(String subject, String id_subject){
@@ -108,6 +113,57 @@ public class ImageDownloader {
         }
     }
 
+    private static class DownloadFileFromURL1_delete extends AsyncTask<String, Integer, String> {
+        private Context con;
+
+        protected DownloadFileFromURL1_delete(Context c){
+            this.con = c;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+        @Override
+        protected String doInBackground(String... f_url) {
+            try {
+                DBHelper dbHelper;
+                dbHelper = new DBHelper(con);
+                int count;
+                File folder = new File(con.getCacheDir() + "/Images");
+                if (!folder.exists()) {
+                    folder.mkdir();
+                }
+                Cursor c;
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                String p_query = "SELECT * FROM images WHERE is_downloaded = ?";
+                c = db.rawQuery(p_query,new String[]{"1"});
+                if (c.moveToFirst() && c.getCount() > 0) {
+                    c.moveToFirst();
+                    while (!c.isAfterLast()) {
+
+                        String fileName = c.getString(2);
+                        File file = new File(con.getCacheDir() + "/Images" , fileName);
+                        boolean deleted = file.delete();
+                        ContentValues cv = new ContentValues();
+                        cv.put("is_downloaded", -1);
+                        db.update("images", cv, "subject = ? and id_subject = ?",
+                                new String[] { c.getString(0), c.getString(1) });
+                        c.moveToNext();
+                    }
+                }
+                c.close();
+                db.close();
+            } catch (Exception e) {
+                Log.e("Error: ", e.getMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String file_url) {
+        }
+    }
 
 
 }

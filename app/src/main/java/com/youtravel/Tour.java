@@ -22,18 +22,24 @@ public class Tour implements Serializable {
             int duration;
             String name;
             String annotation;
-            String description;
             String extra_info;
-            String html;
+            String schedule;
+            String program;
+            String composition;
+            String transport;
+            String transfer;
+            String residence;
+            String excursions;
+            String services;
             int id_status;
-            String link;
             String img;
             Double price;
             String currency;
-            ArrayList<Date> date;
+            Date period_from;
+            Date period_to;
             String id_cities;
-            String start_point;
             String id_comment;
+            String days;
 
 
     public Tour(Cursor c, Context a, SharedPreferences settings){
@@ -44,26 +50,32 @@ public class Tour implements Serializable {
         duration = Integer.parseInt(c.getString(4));
         name = c.getString(5);
         annotation = c.getString(6);
-        description = c.getString(7);
-        extra_info = c.getString(8);
-        html = c.getString(9);
-        id_status = Integer.parseInt(c.getString(10));
-        link = c.getString(11);
-        img = c.getString(12);
+        extra_info = c.getString(7);
+        schedule = c.getString(8);
+        program = c.getString(9);
+        composition = c.getString(10);
+        transport = c.getString(11);
+        transfer = c.getString(12);
+        residence = c.getString(13);
+        excursions = c.getString(14);
+        services = c.getString(15);
+        id_status = Integer.parseInt(c.getString(16));
+        img = c.getString(17);
         try {
-            price =  SettingsActivity.convert(c.getString(14), settings.getString("currency_short_name", null), new DBHelper(a))
-                    * Double.parseDouble(c.getString(13));
+            price =  SettingsActivity.convert(c.getString(19), settings.getString("currency_short_name", null), new DBHelper(a))
+                    * Double.parseDouble(c.getString(18));
             currency = settings.getString("currency_short_name", null);
-            if (price == 0 && c.getDouble(13)!=0) throw new Exception();
+            if (price == 0 && c.getDouble(18)!=0) throw new Exception();
         }
         catch (Exception e){
-            price = Double.parseDouble(c.getString(13));
-            currency = c.getString(14);
+            price = Double.parseDouble(c.getString(18));
+            currency = c.getString(19);
         }
-        date = make_date_list(c.getString(15));
-        id_cities = c.getString(16);
-        start_point = c.getString(17);
-        id_comment = c.getString(18);
+        period_from = make_date(c.getString(20));
+        period_to = make_date(c.getString(21));
+        id_cities = c.getString(22);
+        id_comment = c.getString(23);
+        days = c.getString(24);
 
     }
 
@@ -94,6 +106,4 @@ public class Tour implements Serializable {
         }
         return result;
     }
-
-
 }

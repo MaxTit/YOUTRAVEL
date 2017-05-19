@@ -25,42 +25,140 @@ tools:context=".TourContentActivity" >
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:gravity="top|center_horizontal"
-                android:background="?attr/colorPrimaryDark"
+                android:gravity="center"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                android:background="@drawable/com_background"
                 app:navigationIcon="@drawable/ic_launcher"
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_height="70dp"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp">
+                <TextView
+                    android:id="@+id/title_tour"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:textAppearance="@style/Toolbar.TitleText"
+                    android:layout_gravity="top"
+                    android:gravity="center">
+                </TextView>
             </android.support.v7.widget.Toolbar>
 
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+            <RelativeLayout
+                android:id="@+id/tabsview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <WebView
-                android:id="@+id/webview"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:background="#edeff0" >
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/com_background"
+                    android:layout_height="40dp"
+                    android:elevation="4dp"
+                    >
 
-            </WebView>
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="-8dp"
+                        android:layout_centerHorizontal="true">
 
-            <Button
+                    </TabWidget>
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tabsview"
+                android:paddingTop="48dp">
+                <RelativeLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    <LinearLayout
+                        android:id="@+id/tab1_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal" >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_horizontal" >
+
+                        </LinearLayout>
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/gallery1"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:layout_marginTop="4dp"
+                            android:spacing="2dp" />
+
+                    </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:id="@+id/tab2_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal" >
+
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:id="@+id/tab3_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal" >
+
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </FrameLayout>
+        </TabHost>
+        <Button
             android:text="Связаться с менеджером"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#8ec4bdbd"
             android:id="@+id/button2"
-            android:layout_alignBottom="@+id/webview"
             android:layout_marginBottom="10dp" />
-
-        </RelativeLayout>
     </LinearLayout>
 
 </FrameLayout>

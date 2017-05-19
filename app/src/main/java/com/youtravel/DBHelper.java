@@ -8,8 +8,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
-      // ����������� �����������
-      super(context.getApplicationContext(), "myDB", null, 26); // !! increase last argument value to perform update of data base on devices !!
+      super(context.getApplicationContext(), "myDB", null, 27); // !! increase last argument value to perform update of data base on devices !!
     }
     @Override
     public void onOpen(SQLiteDatabase database) {
@@ -164,17 +163,22 @@ public class DBHelper extends SQLiteOpenHelper {
     	             + "duration integer,"
     	             + "name text,"
     	             + "annotation text,"
-    	             + "description text,"
-    	             + "extra_info text,"
-    	             + "html text,"
+					 + "extra_info text,"
+					 + "schedule text,"
+					 + "program text,"
+					 + "composition text,"
+					 + "transport text,"
+					 + "transfer text,"
+					 + "residence text,"
+					 + "excursions text,"
+					 + "services text,"
     	             + "id_status integer,"
-    	             + "link text,"
     	             + "img text,"
     	             + "price real,"
     	             + "currency text,"
-    	             + "date DATE,"
+    	             + "period_from DATE,"
+					 + "period_to DATE,"
     	             + "id_cities text,"
-    	             + "start_point text,"
     	             + "id_comment text,"
 					 + "days text,"
 					 + "date_update DATETIME" + ");");

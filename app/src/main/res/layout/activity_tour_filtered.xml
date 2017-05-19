@@ -74,15 +74,6 @@
                                     android:layout_gravity="center_vertical"
                                     android:orientation="horizontal"
                                     >
-                                    <!--<TextView-->
-                                        <!--android:layout_width="wrap_content"-->
-                                        <!--android:layout_height="wrap_content"-->
-                                        <!--android:text="Сортировать по: "-->
-                                        <!--android:textAppearance="@style/TypicalText01"-->
-                                        <!--android:textSize="25sp"-->
-                                        <!--android:paddingLeft="10dp"-->
-                                        <!--android:paddingRight="40dp"-->
-                                        <!--/>-->
                                     <TextView
                                         android:id="@+id/sort_name"
                                         android:layout_width="wrap_content"

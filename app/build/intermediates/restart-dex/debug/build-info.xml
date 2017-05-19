@@ -1,37 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="19"
-    density="tvdpi"
-    format="8"
-    plugin-version="2.2.3"
-    timestamp="34404498501239"
-    token="6704050224548588404"
-    verifier="FULL_BUILD_REQUESTED" >
+    api-level="23"
+    build-mode="COLD"
+    density="xhdpi"
+    format="10"
+    plugin-version="2.3.2"
+    timestamp="1495193047003"
+    token="-2213640991454528585"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="40279" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="1589" />
     <task
         name="verifier"
-        duration="0" />
+        duration="472" />
 
     <artifact
-        location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Android Studio Projects\YOUTRAVEL\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
-        timestamp="34404498501239"
+        build-mode="FULL"
+        timestamp="1495192336563"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/MaximTitarenko/Documents/Android Projects/git/YOUTRAVEL/app/build/outputs/apk/app-debug.apk"
-            type="MAIN" />
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1495193047003"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android Studio Projects\YOUTRAVEL\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

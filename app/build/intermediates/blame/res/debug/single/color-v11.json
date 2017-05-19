@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\MaximTitarenko\\Documents\\Android Projects\\git\\YOUTRAVEL\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "source": "C:\\Users\\titar_000\\.android\\build-cache\\a9984257438f974b978619158726335d906715d4\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "source": "C:\\Users\\titar_000\\.android\\build-cache\\a9984257438f974b978619158726335d906715d4\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]
