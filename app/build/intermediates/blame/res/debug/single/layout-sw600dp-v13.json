@@ -4,16 +4,56 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_tour_filtered.xml"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_services.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_services.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_excursions.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_excursions.xml"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\pair.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\pair.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\country_content2.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\country_content2.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\kind_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\kind_content.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_tour_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_tour_content.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_journey_kind.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_journey_kind.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\kind_content2.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\kind_content2.xml"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_home.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_home.xml"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_country.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_country.xml"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\catalogue_content.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\country_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\country_content.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_events.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout-sw600dp\\activity_events.xml"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\catalogue_content2.xml",

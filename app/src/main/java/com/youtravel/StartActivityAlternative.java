@@ -1402,6 +1402,7 @@ public class StartActivityAlternative extends AppCompatActivity {
                                 if (json_data.getString("img") != "null")
                                     cv.put("img", json_data.getString("img"));
 
+
                                 if (json_data.getString("price") != "null")
                                     cv.put("price", json_data.getDouble("price"));
 

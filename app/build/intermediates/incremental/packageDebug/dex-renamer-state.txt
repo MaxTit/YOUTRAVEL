@@ -1,4 +1,4 @@
-#Wed May 17 16:18:54 EEST 2017
+#Thu Jun 15 18:46:11 EEST 2017
 base.0=C\:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ee37634401b4fa7500c420a00eebf71e32549a82
 renamed.1=classes2.dex
 renamed.0=classes.dex

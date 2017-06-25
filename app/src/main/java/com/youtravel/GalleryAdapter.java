@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import java.io.File;
@@ -49,6 +50,22 @@ public class GalleryAdapter extends PagerAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = inflater.inflate(R.layout.gallery_item, container,
                 false);
+        LinearLayout content = (LinearLayout) _activity.findViewById(R.id.gallery_btns);
+        RelativeLayout  pair = (RelativeLayout) _activity.getLayoutInflater().inflate(R.layout.img_btn_form, container, false);
+        content.addView(pair);
+        if(position==0)
+        {
+            ImageView img = (ImageView)pair.getChildAt(0);
+            img.setImageResource(R.drawable.img_full);
+        }
+        final ViewPager gallery = (ViewPager)_activity.findViewById(R.id.gallery1);
+        pair.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                gallery.setCurrentItem(position, true);
+            }
+
+        });
         if (!urls[position].isEmpty()) {
             final ImageView imageView = (ImageView) v.findViewById(R.id.image);
             Log.d("ts",urls[position]);

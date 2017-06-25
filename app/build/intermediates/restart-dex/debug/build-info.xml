@@ -6,22 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.2"
-    timestamp="1495193047003"
+    timestamp="1497541425775"
     token="-2213640991454528585"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="40279" />
+        duration="38372" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1589" />
+        duration="1421" />
     <task
         name="verifier"
-        duration="472" />
+        duration="766" />
 
     <artifact
         location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -32,7 +32,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1495192336563"
+        timestamp="1497520058039"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -73,7 +73,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1495193047003"
+        timestamp="1497541425775"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\split-apk\debug\slices\slice_2.apk"

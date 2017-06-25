@@ -12,12 +12,20 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\ic_mail.png"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\people.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\people.png"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\line.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\line.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\load_back2.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\load_back2.png"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\time.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\time.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\load_back5.png",
@@ -36,12 +44,20 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\load_back3d.png"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\cost.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\cost.png"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\menu_selector.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\menu_selector.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\load_back5d.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\load_back5d.png"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\img_empty.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\img_empty.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\load_back1.png",
@@ -76,12 +92,20 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\load_back1d.png"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\img_full.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\img_full.png"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\show_else.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\show_else.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_star.png",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\ic_star.png"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\connect.png",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\drawable-mdpi\\connect.png"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_star_down.png",

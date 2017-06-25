@@ -16,6 +16,7 @@ tools:context=".TourContentActivity" >
     <LinearLayout android:id="@+id/content_lin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="43dp"
         android:orientation="vertical">
 
         <RelativeLayout android:id="@+id/content_rel"
@@ -49,7 +50,7 @@ tools:context=".TourContentActivity" >
         <TabHost
             android:id="@android:id/tabhost"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent">
             <RelativeLayout
                 android:id="@+id/tabsview"
                 android:layout_width="match_parent"
@@ -97,20 +98,150 @@ tools:context=".TourContentActivity" >
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:gravity="center_horizontal" >
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal" >
-
-                        </LinearLayout>
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal" >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="50dp"
+                                android:layout_alignParentLeft="true">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="7dp"
+                                    android:src="@drawable/time"/>
+                                <TextView
+                                    android:id="@+id/time_tour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textSize="16sp"
+                                    android:text="2 days"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/peop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_centerHorizontal="true">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="7dp"
+                                    android:src="@drawable/people"/>
+                                <TextView
+                                    android:id="@+id/people_tour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textSize="16sp"
+                                    android:text="1 чел"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="20dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_toRightOf="@id/peop">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="7dp"
+                                    android:src="@drawable/cost"/>
+                                <TextView
+                                    android:id="@+id/cost_tour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textSize="16sp"
+                                    android:text="ot 25550.0 USD"/>
+                            </LinearLayout>
+                        </RelativeLayout>
                         <android.support.v4.view.ViewPager
                             android:id="@+id/gallery1"
                             android:layout_width="match_parent"
                             android:layout_height="220dp"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="8dp"
                             android:spacing="2dp" />
+                        <HorizontalScrollView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:scrollbars="none">
+                        <LinearLayout
+                            android:id="@+id/gallery_btns"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
 
+                        </LinearLayout>
+                        </HorizontalScrollView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:paddingTop="8dp"
+                            android:paddingLeft="20dp"
+                            android:text="Информация о туре"
+                            android:ems="10"
+                            android:textAppearance="@style/TypicalText01"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+                        <TextView
+                            android:id="@+id/articula1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TypicalText02"
+                            android:textSize="18sp"
+                            android:gravity="start"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:text="Вид отдыха:"
+                            android:textColor="#333333"
+                            />
+                        <TextView
+                            android:id="@+id/articula2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TypicalText02"
+                            android:textSize="18sp"
+                            android:gravity="start"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:text="Город (страна):"
+                            android:textColor="#333333"
+                            />
+                        <TextView
+                            android:id="@+id/articula3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TypicalText02"
+                            android:textSize="18sp"
+                            android:gravity="start"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:text="Продолжительность:"
+                            android:textColor="#333333"
+                            />
+                        <TextView
+                            android:id="@+id/articula4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TypicalText02"
+                            android:textSize="18sp"
+                            android:gravity="start"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:text="Цена:"
+                            android:textColor="#333333"
+                            />
                     </LinearLayout>
                     </ScrollView>
                 </RelativeLayout>
@@ -128,6 +259,48 @@ tools:context=".TourContentActivity" >
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:gravity="center_horizontal" >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:paddingTop="12dp"
+                                android:paddingLeft="20dp"
+                                android:text="Программа"
+                                android:ems="10"
+                                android:textAppearance="@style/TypicalText01"
+                                android:textStyle="bold"
+                                android:textColor="#222222" />
+                            <LinearLayout
+                                android:id="@+id/program_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:orientation="vertical">
+
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:paddingTop="12dp"
+                                android:paddingLeft="20dp"
+                                android:text="Состав тура"
+                                android:ems="10"
+                                android:textAppearance="@style/TypicalText01"
+                                android:textStyle="bold"
+                                android:textColor="#222222" />
+                            <TextView
+                                android:id="@+id/info_tour"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TypicalText02"
+                                android:textSize="18sp"
+                                android:gravity="start"
+                                android:paddingLeft="20dp"
+                                android:paddingTop="5dp"
+                                android:text=""
+                                android:textColor="#333333"
+                                />
 
                         </LinearLayout>
                     </ScrollView>
@@ -152,15 +325,23 @@ tools:context=".TourContentActivity" >
                 </RelativeLayout>
             </FrameLayout>
         </TabHost>
-        <Button
-            android:text="Связаться с менеджером"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#8ec4bdbd"
-            android:id="@+id/button2"
-            android:layout_marginBottom="10dp" />
-    </LinearLayout>
 
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="@color/white"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        >
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:background="@drawable/connect"
+            android:id="@+id/button2"
+            />
+    </RelativeLayout>
 </FrameLayout>
 
 

@@ -8,6 +8,10 @@
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_search.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\main_search.xml"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_chat.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\menu\\menu_chat.xml"
     }

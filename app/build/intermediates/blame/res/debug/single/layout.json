@@ -68,6 +68,10 @@
         "source": "C:\\Users\\titar_000\\.android\\build-cache\\a9984257438f974b978619158726335d906715d4\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\img_btn_form.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout\\img_btn_form.xml"
+    },
+    {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_coments.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout\\tab_coments.xml"
     },
@@ -158,6 +162,10 @@
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu_chat.xml",
         "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout\\activity_menu_chat.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\program_content.xml",
+        "source": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\src\\main\\res\\layout\\program_content.xml"
     },
     {
         "merged": "C:\\Android Studio Projects\\YOUTRAVEL\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_event_content.xml",

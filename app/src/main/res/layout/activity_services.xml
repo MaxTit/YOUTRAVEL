@@ -21,14 +21,24 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:gravity="top|center_horizontal"
-                android:background="?attr/colorPrimaryDark"
+                android:gravity="center"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                android:background="@drawable/com_background"
                 app:navigationIcon="@drawable/ic_launcher"
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_height="70dp"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:textAppearance="@style/Toolbar.TitleText"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:text="Услуги">
+                </TextView>
             </android.support.v7.widget.Toolbar>
 
             <android.support.v4.widget.SwipeRefreshLayout
@@ -36,17 +46,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-            <ScrollView  android:id="@+id/scroll_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout android:id="@+id/content_rel"
+                <com.youtravel.ScrollViewExt android:id="@+id/scroll_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
-                </LinearLayout>
-            </ScrollView>
+
+                    <LinearLayout android:id="@+id/content_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingBottom="20dp"
+                        android:background="@color/white">
+                    </LinearLayout>
+                </com.youtravel.ScrollViewExt>
             </android.support.v4.widget.SwipeRefreshLayout>
         </LinearLayout>
     </FrameLayout>

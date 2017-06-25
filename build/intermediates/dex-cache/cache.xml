@@ -2,6 +2,33 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\025539f45870c2f994567076018ba2372f563c47\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_8582a0e98a4a9cf65248fc95f24c668692e41450.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\6c9ad1f3a76074d05f9992d2b26e88e73b4c851a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a558f54ad003ffe728034d78a474709a77337cc2">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_3a2b6b44e5438040aa991576c97b5213dfe2ac9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\baec2fbb40f65f008beb48982ff83dcdf0cd5092\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_8d842998a8a5bd9df5520ff8252195a975d6aa26.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\titar_000\.android\build-cache\baec2fbb40f65f008beb48982ff83dcdf0cd5092\output\jars\classes.jar"
         jumboMode="true"
@@ -47,6 +74,15 @@
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3a2b6b44e5438040aa991576c97b5213dfe2ac9d\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\05ed536ab867e7b4666da63076120124854166c8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_af5cac2c22233125affba6c1b5c7a123e1e338c3.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\titar_000\.android\build-cache\025539f45870c2f994567076018ba2372f563c47\output\jars\classes.jar"
         jumboMode="true"
@@ -74,6 +110,24 @@
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4cf6ffeb1b6dc562edcda05d077ceef85b15413c\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\9e20c8e5fa2452dda2a3d038f9977c7ae8678c6e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_d7aff0d08587f17b0cc459aaa656268edeec5f13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\a9984257438f974b978619158726335d906715d4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_4cf6ffeb1b6dc562edcda05d077ceef85b15413c.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\adt-bundle-windows-x86_64-20130219\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
         jumboMode="true"
@@ -92,6 +146,24 @@
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_61adafb65d27c22eec17a573df7c501a93ebebc8\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\adt-bundle-windows-x86_64-20130219\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\support-annotations-24.0.0_5a50af7e9ff76581969c1b09e002623f95088960.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\684394ea426e3478aa88230275ca339df952107a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_61adafb65d27c22eec17a573df7c501a93ebebc8.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\titar_000\.android\build-cache\36c1838aa47e12ab8cea6f01632d9e056e82eaa5\output\jars\classes.jar"
         jumboMode="true"
@@ -99,6 +171,33 @@
         revision="25.0.0"
         sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d691234c8bb4c97fdd4d8154cea87fc1ad3dfd73\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\f1a134a83572b89b86ccc974f7365ba6f9478142\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_11bfcebafc438b9cbf2666725b3248936036032e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\99cdf675c75d20bdf389d858e60d60f23f424332\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_929a3b3da509d002cd8f2dabbc854f34ffad23c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\36c1838aa47e12ab8cea6f01632d9e056e82eaa5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_d691234c8bb4c97fdd4d8154cea87fc1ad3dfd73.jar" />
     </item>
     <item
         is-multidex="true"
@@ -119,6 +218,24 @@
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_faed0497b9a13db79026165a4c4e4458cb943bc7\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\c829b6223a4446095128d7bcd73e68d874cb8360\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_a2344277ce47db18d3759fe53125b9b50f8bb28a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\62c160722ee0cd3b69c5bff94545357a36e4ddea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_c02dbdc0921614e684d7d59c175b66bffbc6111a.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\titar_000\.android\build-cache\62c160722ee0cd3b69c5bff94545357a36e4ddea\output\jars\classes.jar"
         jumboMode="true"
@@ -137,13 +254,31 @@
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_929a3b3da509d002cd8f2dabbc854f34ffad23c1\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\3522cd9405d8e1217fd54cc21e1a726a7cbf1f0f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_faed0497b9a13db79026165a4c4e4458cb943bc7.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="380d61320f3a8876b7fdc88f3610f3ace87da277">
+        sha1="ced328eac76dd22307249c4985fc83556df33137">
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_64940f94071d8f9bb0332c830cafe43d7186522b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\aaf6c97a577de9ff12df007ccaa302d290e91d30\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_cda61ec6eee46f119752e8d51eee048efcf01cf8.jar" />
     </item>
     <item
         is-multidex="true"
@@ -171,6 +306,24 @@
         revision="25.0.0"
         sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
         <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9163f55e1481f5a8ebf395fa287b3ffa569c3708\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\e6126bb77b7f82ea4e5b9569003604f7e506e7cb\output\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\internal_impl-24.0.0_f35e58dd3781e236dcfb93c2f6e6519d07eda8e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\titar_000\.android\build-cache\e6126bb77b7f82ea4e5b9569003604f7e506e7cb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Android Studio Projects\YOUTRAVEL\app\build\intermediates\pre-dexed\release\classes_9163f55e1481f5a8ebf395fa287b3ffa569c3708.jar" />
     </item>
     <item
         is-multidex="true"

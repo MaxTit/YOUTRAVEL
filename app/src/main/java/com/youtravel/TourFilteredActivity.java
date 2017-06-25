@@ -1,5 +1,6 @@
 package com.youtravel;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -15,9 +16,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -66,6 +69,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
     long diff0 = 0;
     static Boolean fl = true;
     static int limit = 0;
+    static String search_qu = null;
 
     @Override
     public void onScrollChanged(ScrollViewExt scrollView, int x, int y, int oldx, int oldy) {
@@ -261,13 +265,14 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
         SQLiteDatabase db;
         Log.i("REFRESHED", "accessed refreshInterface() method");
         if (mode != 3)
-            try {
+        {
                 underframe.removeAllViewsInLayout();
                 limit = 0;
-            } catch(NullPointerException ne) {}
+            Log.d("delete in view", "111");
+        }
 
         db = dbHelper.getWritableDatabase();
-        String b = make_filtered_query(country_filter, kind_filter, city_filter, duration_filter, orderBy);
+        String b = make_filtered_query(country_filter, kind_filter, city_filter, duration_filter, orderBy, search_qu);
         c = db.rawQuery(b + " LIMIT 20 OFFSET " + limit, new String[]{});
         Log.i("ScrRef", "" + limit);
         limit+=10;
@@ -589,8 +594,64 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        menu.findItem(R.id.action_favorite).setIcon(R.drawable.ic_search);
+        getMenuInflater().inflate(R.menu.main_search, menu);
+        menu.findItem(R.id.action_favorite).setIcon(R.drawable.ic_filter);
+
+        // search item
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        if(null!=searchManager ) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
+        searchView.setIconifiedByDefault(false);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query)
+            {
+                if(query.length()>0)
+                {
+                    limit=0;
+                    search_qu = query;
+                    refreshInterface(1);
+                }
+                else
+                {
+                    if(search_qu!= null)
+                    {
+                        limit = 0;
+                        search_qu = null;
+                        refreshInterface(1);
+                    }
+                }
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        MenuItemCompat.setOnActionExpandListener(searchItem,new MenuItemCompat.OnActionExpandListener()
+        {
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item)
+            {
+                limit = 0;
+                search_qu = null;
+                Log.d("close search ", "999");
+                refreshInterface(1);
+                return true; // Return true to collapse action view
+            }
+
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item)
+            {
+                // TODO Auto-generated method stub
+                return true;
+            }
+        });
         return true;
     }
 
@@ -748,11 +809,20 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
 
 
     private String make_filtered_query(ArrayList<String> country_filter, ArrayList<String> kind_filter,
-                                       ArrayList<String> city_filter, ArrayList<Integer> duration_filter, String orderBy) {
+                                       ArrayList<String> city_filter, ArrayList<Integer> duration_filter, String orderBy, String search) {
         final String name_country = " id_country = ";
-        final String name_kind = " id_kind = ";
+        final String name_kind = " id_kind like ";
         final String name_city = " id_city = ";
-
+        String search_text = "";
+        if(search!=null)
+        {
+            search_text = " AND (name like '%"+search+"%'" +
+                    " or annotation like '%"+search+"%'" +
+                    " or extra_info like '%"+search+"%'" +
+                    " or program like '%"+search+"%'" +
+                    " or transport like '%"+search+"%'" +
+                    " or residence like '%"+search+"%')";
+        }
         return "SELECT * FROM tours WHERE ("
                 + ((!transcript_filter(country_filter, name_country).isEmpty()) ? (transcript_filter(country_filter, name_country))
                 : "(id_country IS NOT NULL)")
@@ -761,7 +831,7 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
                 + ((!transcript_filter(city_filter, name_city).isEmpty()) ? (" AND " + transcript_filter(city_filter, name_city))
                 : " ")
                 + ((duration_filter != null) ? "AND duration >= " + duration_filter.get(0).toString() + " AND duration <= " + duration_filter.get(1).toString() : "")
-                + ") ORDER BY " + orderBy;
+                + ")" + search_text+" ORDER BY " + orderBy;
     }
 
     private String transcript_filter(ArrayList<String> filter, String name) {
@@ -769,7 +839,12 @@ public class TourFilteredActivity extends AppCompatActivity implements ScrollVie
         if (filter != null) {
             query += "(";
             for (int i = 0; i < filter.size(); i++) {
-                query += name + filter.get(i) + ((i != (filter.size() - 1)) ? " OR" : ")");
+                if(name.equals(" id_kind like "))
+                {
+                    query += name +"'%\"Тип\":"+ filter.get(i)+",%'" + ((i != (filter.size() - 1)) ? " OR" : ")");
+                }
+                else
+                    query += name + filter.get(i) + ((i != (filter.size() - 1)) ? " OR" : ")");
             }
         }
         return query;

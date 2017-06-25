@@ -7,16 +7,5 @@
         android:icon="@drawable/ic_search"
         android:title="action_favorite"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/action_like"
-        android:icon="@drawable/ic_like"
-        android:title="action_like"
-        app:showAsAction="always"/>
-
-    <item
-        android:id="@+id/action_mail"
-        android:icon="@drawable/ic_mail"
-        android:title="action_mail"
-        app:showAsAction="always"/>
 
 </menu>
